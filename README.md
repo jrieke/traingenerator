@@ -19,6 +19,6 @@
 
 <br>
 
-*<strong>NOTE:</strong> traingenerator is in closed beta, request access [here](https://mlcodegen.landen.co/). Code will be added to this repo soon.*
+*<strong>NOTE:</strong> traingenerator is in closed beta, request access [here](https://mlcodegen.landen.co/). Code will be added to this repo mid December.*
 
 Generate custom template code for PyTorch & sklearn, using a simple web UI built with [streamlit](https://www.streamlit.io/). traingenerator offers multiple options for preprocessing, model setup, training, and visualization (using Tensorboard or comet.ml). It exports to .py, Jupyter Notebook, or  [Google Colab](https://colab.research.google.com/). The perfect tool to jumpstart your next machine learning project! ✨
