@@ -25,13 +25,13 @@ st.set_page_config(
 
 
 # Set up github access for "Open in Colab" button.
+load_dotenv()  # load environment variables from .env file
 if os.getenv("GITHUB_TOKEN") and os.getenv("REPO_NAME"):
-    load_dotenv()  # load environment variables from .env file
     g = Github(os.getenv("GITHUB_TOKEN"))
     repo = g.get_repo(os.getenv("REPO_NAME"))
     colab_enabled = True
 
-    def add_to_colab(notebook, repo):
+    def add_to_colab(notebook):
         """Adds notebook to Colab by pushing it to Github repo and returning Colab link."""
         notebook_id = str(uuid.uuid4())
         repo.create_file(
@@ -45,7 +45,6 @@ if os.getenv("GITHUB_TOKEN") and os.getenv("REPO_NAME"):
 
 else:
     colab_enabled = False
-colab_enabled = False
 
 
 # Display header.
