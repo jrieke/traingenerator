@@ -1,0 +1,7 @@
+Jinja2==2.8
+jupytext==1.7.1
+bokeh==2.2.3
+streamlit==0.72.0
+pandas==1.1.3
+PyGithub==1.54
+python-dotenv==0.15.0
