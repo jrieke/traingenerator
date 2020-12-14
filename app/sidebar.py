@@ -119,6 +119,8 @@ def show():
                 |   +-- garfield.png
                 |   +-- smelly-cat.png
                 ```
+                
+                See also [this example dir](https://github.com/jrieke/traingenerator/tree/main/data/image-data)
                 """
                 )
 
