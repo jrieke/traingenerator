@@ -102,9 +102,8 @@ def show():
                 st.write(
                     """
                 Expected format: `[images, labels]`
-                - `images` has shape *num samples* x *color channels* (1 for grayscale, 3 for RGB)
-                x *height* x *width*
-                - `labels` has shape *num samples*
+                - `images` has array shape `(num samples, color channels, height, width)`
+                - `labels` has array shape `(num samples, )`
                 """
                 )
             elif inputs["data_format"] == "Image files":

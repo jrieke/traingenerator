@@ -54,8 +54,8 @@ with zipfile.ZipFile(zip_path, "r") as f:
 {% if data_format == "Numpy arrays" %}
 # INSERT YOUR DATA HERE
 # Expected format: [images, labels]
-# - images has shape num samples x color channels x height x width
-# - labels has shape num samples
+# - images has array shape (num samples, color channels, height, width)
+# - labels has array shape (num samples, )
 train_data = fake_data()  # required
 val_data = fake_data()    # optional
 test_data = None          # optional
@@ -92,7 +92,7 @@ experiment = Experiment("{{ comet_api_key }}"{% if comet_project %}, project_nam
 checkpoint_dir = Path(f"checkpoints/{experiment_id}")
 checkpoint_dir.mkdir(parents=True, exist_ok=True)
 {% endif %}
-print_every = {{ print_every }}
+print_every = {{ print_every }}  # batches
 
 {% if gpu %}
 # Set up GPU.

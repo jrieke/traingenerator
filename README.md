@@ -21,12 +21,17 @@
 
 <h3 align="center">
     🎉 traingenerator is now live! 🎉
+    <br><br>
+    Try it out: <br>
+    >>> <a href="https://traingenerator.jrieke.com">https://traingenerator.jrieke.com</a> <<<
 </h3>
 
+<!--
 <p align="center"><strong>
     Try it out: <br>
     >>> <a href="https://traingenerator.jrieke.com">https://traingenerator.jrieke.com</a> <<<</strong>
 </p>
+-->
 
 <br>
 
