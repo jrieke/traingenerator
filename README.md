@@ -85,7 +85,6 @@ you also need to run:*
 ```
 heroku config:set GITHUB_TOKEN=<your-github-access-token>
 heroku config:set REPO_NAME=<user/notebooks-repo>
-
 ```
 
 ## Testing
