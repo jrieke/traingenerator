@@ -32,6 +32,14 @@
 
 Generate custom template code for PyTorch & sklearn, using a simple web UI built with [streamlit](https://www.streamlit.io/). traingenerator offers multiple options for preprocessing, model setup, training, and visualization (using Tensorboard or comet.ml). It exports to .py, Jupyter Notebook, or  [Google Colab](https://colab.research.google.com/). The perfect tool to jumpstart your next machine learning project! ✨
 
+<br>
+
+---
+
+<br>
+
+**Note: The steps below are only required for developers who want to run/deploy traingenerator locally.**
+
 ## Installation
 
 ```bash
