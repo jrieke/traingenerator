@@ -8,7 +8,8 @@
 
 <p align="center">
     <a href="https://www.buymeacoffee.com/jrieke"><img src="https://img.shields.io/badge/Buy%20me%20a-coffee-orange.svg?logo=buy-me-a-coffee&logoColor=orange"></a>
-    <a href=""><img src="https://img.shields.io/github/license/jrieke/traingenerator.svg"></a>
+    <a href="LICENSE"><img src="https://img.shields.io/github/license/jrieke/traingenerator.svg"></a>
+    <a href="https://github.com/psf/black"><img src="https://img.shields.io/badge/code%20style-black-000000.svg" alt="Code style: black"></a>
 </p>
 
 <br>
