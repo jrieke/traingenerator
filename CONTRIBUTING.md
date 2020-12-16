@@ -19,7 +19,8 @@ Make sure that:
 - you added new tests for your code (for now, you only need to make sure that any 
 generated code runs without errors, see 
 [tests/test_templates.py](tests/test_templates.py) for examples)
-- you formatted everything with [black](https://github.com/psf/black)
+- you tested all new functionality live, i.e. in the running web app
+- you formatted all code with [black](https://github.com/psf/black)
 - any generated code is formatted nicely, both in .py and in .ipynb ("nicely" = 
 comparable to the existing templates)
 - you added comments in your code that explain what it does
