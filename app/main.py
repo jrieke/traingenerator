@@ -112,7 +112,7 @@ with st.sidebar:
 
 
 # Show template-specific sidebar components (based on sidebar.py in the template dir).
-template_sidebar = import_from_file(
+template_sidebar = utils.import_from_file(
     "template_sidebar", os.path.join(template_dir, "sidebar.py")
 )
 inputs = template_sidebar.show()
