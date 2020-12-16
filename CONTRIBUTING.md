@@ -1,6 +1,6 @@
-# Contributing
+# Want to contribute?
 
-Want to contribute to traingenerator? That's very welcome! :heart:
+That's very welcome! :heart:
 
 
 ## Before you start
