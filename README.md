@@ -46,6 +46,11 @@ Generate custom template code for PyTorch & sklearn, using a simple web UI built
 
 **Note: The steps below are only required for developers who want to run/deploy traingenerator locally.**
 
+## Contributing
+
+PRs are welcome! Please have a look at [CONTRIBUTING.md](CONTRIBUTING.md).
+
+
 ## Installation
 
 ```bash
