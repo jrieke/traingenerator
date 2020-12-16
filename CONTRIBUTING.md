@@ -17,8 +17,11 @@ Make sure that:
 
 - all existing tests are passing (see [README.md](README.md) on how to run tests)
 - you added new tests for your code (for now, you only need to make sure that any 
-generated code runs without errors, see [tests/test_templates.py](tests/test_templates.py) for examples)
+generated code runs without errors, see 
+[tests/test_templates.py](tests/test_templates.py) for examples)
 - you formatted everything with [black](https://github.com/psf/black)
+- any generated code is formatted nicely, both in .py and in .ipynb ("nicely" = 
+comparable to the existing templates)
 - you added comments in your code that explain what it does
 - the PR explains in detail what's new
 
