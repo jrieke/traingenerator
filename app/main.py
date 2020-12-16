@@ -18,6 +18,7 @@ import utils
 
 MAGE_EMOJI_URL = "https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/240/twitter/259/mage_1f9d9.png"
 
+
 # Set page title and favicon.
 st.set_page_config(
     page_title="Code Generator for Machine Learning", page_icon=MAGE_EMOJI_URL,
@@ -25,6 +26,7 @@ st.set_page_config(
 
 
 # Set up github access for "Open in Colab" button.
+# TODO: Maybe refactor this to another file.
 load_dotenv()  # load environment variables from .env file
 if os.getenv("GITHUB_TOKEN") and os.getenv("REPO_NAME"):
     g = Github(os.getenv("GITHUB_TOKEN"))
@@ -69,13 +71,13 @@ st.markdown("<br>", unsafe_allow_html=True)
 """
 
 # Compile a dictionary of all templates based on the subdirs in traingenerator/templates
-# (exclude the template named "example").
-#
-# Example:
+# (excluding the "example" template).
+# Format:
 # {
-#     "Image classification": {
-#         "PyTorch": "templates/Image classification_PyTorch",
-#         "scikit-learn": "templates/Image classification_scikit-learn",
+#     "task1": "path/to/template",
+#     "task2": {
+#         "framework1": "path/to/template", 
+#         "framework2": "path/to/template"
 #     },
 # }
 template_dict = collections.defaultdict(dict)
@@ -89,9 +91,12 @@ for template_dir in [
     except ValueError:
         # Templates with task only.
         template_dict[template_dir.name] = template_dir.path
-# st.write(template_dict)
+# print(template_dict)
 
-# Show task/framework selector in sidebar (based on template_dict).
+
+# Show selectors for task and framework in sidebar (based on template_dict). These 
+# selectors determine which template (from template_dict) is used (and also which 
+# template-specific sidebar components are shown below).
 with st.sidebar:
     st.write("## Task")
     task = st.selectbox(
@@ -112,22 +117,19 @@ template_sidebar = import_from_file(
 )
 inputs = template_sidebar.show()
 
-# Display sidebar and get user inputs.
-# inputs = sidebar.show()
 
-
-# Generate code and notebook based on jinja template.
+# Generate code and notebook based on template.py.jinja file in the template dir.
 env = Environment(
     loader=FileSystemLoader(template_dir), trim_blocks=True, lstrip_blocks=True,
 )
-# template = env.get_template(f"image_classification_{inputs['framework']}.py.jinja")
-template = env.get_template("template.py.jinja")
+template = env.get_template("code-template.py.jinja")
 code = template.render(header=utils.code_header, notebook=False, **inputs)
 notebook_code = template.render(header=utils.notebook_header, notebook=True, **inputs)
 notebook = utils.to_notebook(notebook_code)
 
 
 # Display donwload/open buttons.
+# TODO: Maybe refactor this (with some of the stuff in utils.py) to buttons.py.
 st.write("")  # add vertical space
 col1, col2, col3 = st.beta_columns(3)
 open_colab = col1.button("🚀 Open in Colab")  # logic handled further down
