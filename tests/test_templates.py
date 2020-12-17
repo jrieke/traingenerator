@@ -13,19 +13,23 @@ import itertools
 from jinja2 import Environment, FileSystemLoader
 import pytest
 import tempfile
+import runpy
 
 
-def exec_in_tmp_dir(code):
+def run_in_tmp_dir(code):
     """Executes code in temporary working directory."""
     with tempfile.TemporaryDirectory() as tmp_dir:
         cwd = os.getcwd()
         os.chdir(tmp_dir)
-        # print("Execute code in:", os.getcwd())
+        
+        # Use runpy instead of exec here because a) it doesn't interfere with 
+        # globals and b) it gives better error messages.
+        with open("code.py", "w") as f:
+            f.write(code)
         try:
-            exec(code, globals())
+            runpy.run_path("code.py")
         finally:
             os.chdir(cwd)
-        # print("Back to:", os.getcwd())
 
 
 class PseudoDirEntry:
@@ -40,11 +44,15 @@ def test_all_templates(subtests, pytestconfig):
     
     For every template, it renders the code (with input values defined in the 
     accompanying test-inputs.yml file) and checks that it runs without errors.
+    Uses the pytest-subtests package to run each template/combination of input values 
+    in its own test.
     """
 
-    # TODO: This tests all templates in one big test function. This makes it hard
-    # to find out what went wrong. Ideally, generate tests on the fly, e.g. sth like:
-    # generate_test(template, inputs).run()
+    # TODO: This uses pytest-subtests at the moment. This is better than testing 
+    # everything at once in this function but it's still not perfect:
+    # - doesn't run tests in parallel
+    # - doesn't produce intermediate output while running the tests
+    # - runs the code via exec which doesn't give good errors
 
     # Find available templates (based on --template option).
     template_option = pytestconfig.getoption("template")
@@ -97,7 +105,7 @@ def test_all_templates(subtests, pytestconfig):
             with subtests.test(msg=template_dir.name + "---" + inputs_str):
                 # print(inputs)
                 code = template.render(header=lambda x: "", notebook=False, **inputs)
-                exec_in_tmp_dir(code)
+                run_in_tmp_dir(code)
                 # assert False
 
 
