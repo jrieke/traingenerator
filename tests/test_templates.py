@@ -40,7 +40,15 @@ def exec_in_tmp_dir(code):
         # print("Back to:", os.getcwd())
 
 
-def test_all_templates(subtests):
+class PseudoDirEntry:
+    def __init__(self, path):
+        self.path = os.path.realpath(path)
+        self.name = os.path.basename(self.path)
+        self.is_dir = os.path.isdir(self.path)
+        self.stat = lambda: os.stat(self.path)
+
+
+def test_all_templates(subtests, pytestconfig):
     """
     Automatically tests all templates in the templates dir. 
     
@@ -51,15 +59,25 @@ def test_all_templates(subtests):
     # TODO: This tests all templates in one big test function. This makes it hard
     # to find out what went wrong. Ideally, generate tests on the fly, e.g. sth like:
     # generate_test(template, inputs).run()
-    # Also, enable to only run individual tests with cmd arg, e.g.
-    # pytest . --template "Image classification_PyTorch"
 
-    template_dirs = [
-        f for f in os.scandir("templates") if f.is_dir() and f.name != "example"
-    ]
+    # Find available templates (based on --template option).
+    template_option = pytestconfig.getoption("template")
+    if template_option is None:  # use all templates except for "example" (default)
+        template_dirs = [
+            f for f in os.scandir("templates") if f.is_dir() and f.name != "example"
+        ]
+    else:  # use only given template
+        template_dirs = [PseudoDirEntry(os.path.join("templates", template_option))]
+        if not os.path.exists(template_dirs[0].path):
+            raise ValueError(
+                "Template option given but no matching template found: "
+                f"{template_option}"
+            )
+
+    # print(template_dirs)
+    # assert False
 
     for template_dir in template_dirs:
-
         # Load template from "code-template.py.jinja".
         env = Environment(
             loader=FileSystemLoader(template_dir.path),
