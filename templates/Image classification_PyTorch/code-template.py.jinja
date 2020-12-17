@@ -27,9 +27,11 @@ from ignite.metrics import Accuracy, Loss
 import urllib
 import zipfile
 {% endif %}
+{% if visualization_tool == "Tensorboard" or checkpoint %}
+from datetime import datetime
+{% endif %}
 {% if visualization_tool == "Tensorboard" %}
 from tensorboardX import SummaryWriter
-from datetime import datetime
 {% endif %}
 {% if checkpoint %}
 from pathlib import Path
