@@ -108,9 +108,25 @@ heroku config:set REPO_NAME=<user/notebooks-repo>
 
 ## Testing
 
+First, install pytest and required plugins via:
+
+```bash
+pip install requirements-dev.txt
+```
+
+To run all tests: 
+
 ```bash
 pytest ./tests
 ```
 
-This generates Python codes with different configurations (just like the app would do) 
-and checks that they run. The streamlit app itself is not tested at the moment.
+Note that this only tests the code templates (i.e. it renders them with different 
+input values and makes sure that the code executes without error). The streamlit app 
+itself is not tested at the moment.
+
+You can also test an individual template by passing the name of the template dir to 
+`--template`, e.g.:
+
+```bash
+pytest ./tests --template "Image classification_scikit-learn"
+```

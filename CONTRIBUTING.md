@@ -15,10 +15,9 @@ but you can also contact me on [Twitter](https://twitter.com/jrieke) or
 
 Make sure that:
 
-- all existing tests are passing (see [README.md](README.md) on how to run tests)
-- you added new tests for your code (for now, you only need to make sure that any 
-generated code runs without errors, see 
-[tests/test_templates.py](tests/test_templates.py) for examples)
+- all tests are passing (see [README.md](README.md) on how to run tests)
+- each new template dir contains a file `test-inputs.yml` that specifies a few input 
+values to test the template (the template is then automatically tested by pytest)
 - you tested all new functionality live, i.e. in the running web app
 - you formatted all code with [black](https://github.com/psf/black)
 - any generated code is formatted nicely, both in .py and in .ipynb ("nicely" = 
