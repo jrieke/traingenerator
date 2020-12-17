@@ -42,18 +42,16 @@ OPTIMIZERS = {
 
 def show():
     """Shows the sidebar components for the template and returns user inputs as dict."""
-    
+
     inputs = {}
-    
+
     with st.sidebar:
         st.write("## Model")
         model = st.selectbox("Which model?", list(MODELS.keys()))
 
         # Show model variants if model has multiple ones.
         if isinstance(MODELS[model], dict):  # different model variants
-            model_variant = st.selectbox(
-                "Which variant?", list(MODELS[model].keys())
-            )
+            model_variant = st.selectbox("Which variant?", list(MODELS[model].keys()))
             inputs["model_func"] = MODELS[model][model_variant]
         else:  # only one variant
             inputs["model_func"] = MODELS[model]
@@ -73,8 +71,8 @@ def show():
             st.write(
                 """
             Expected format: `[images, labels]`
-            - `images` has array shape `(num samples, color channels, height, width)`
-            - `labels` has array shape `(num samples, )`
+            - `images` has array shape (num samples, color channels, height, width)
+            - `labels` has array shape (num samples, )
             """
             )
         elif inputs["data_format"] == "Image files":
