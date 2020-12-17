@@ -98,12 +98,14 @@ checkpoint_dir.mkdir(parents=True, exist_ok=True)
 {% endif %}
 print_every = {{ print_every }}  # batches
 
+# Set up device.
 {% if gpu %}
-# Set up GPU.
 use_cuda = torch.cuda.is_available()
-device = torch.device("cuda" if use_cuda else "cpu")
-    
+{% else %}
+use_cuda = False
 {% endif %}
+device = torch.device("cuda" if use_cuda else "cpu")
+
 
 {{ header("Preprocessing") }}
 def preprocess(data, name):
@@ -175,9 +177,7 @@ test_loader = preprocess(test_data, "test")
 {{ header("Model") }}
 # Set up model, loss, optimizer.
 model = models.{{ model_func }}(pretrained={{ pretrained }})
-{% if gpu %}
 model = model.to(device)
-{% endif %}
 loss_func = nn.{{ loss }}()
 optimizer = optim.{{ optimizer }}(model.parameters(), lr=lr)
 
