@@ -111,7 +111,7 @@ heroku config:set REPO_NAME=<user/notebooks-repo>
 First, install pytest and required plugins via:
 
 ```bash
-pip install requirements-dev.txt
+pip install -r requirements-dev.txt
 ```
 
 To run all tests: 
