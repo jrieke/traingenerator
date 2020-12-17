@@ -1,0 +1,18 @@
+{# 
+This template uses the Jinja2 template engine. 
+
+See below for some examples.
+
+You can alo create if statements, for loops, etc. 
+See here: https://jinja.palletsprojects.com/en/2.11.x/templates/
+#}
+
+{# Write a section header (formatted differently for .py and .ipynb) #}
+{{ header("Model setup") }}
+
+{# Access a value stored in the `inputs` dict in `sidebar.py` #}
+model = {{ model }}
+
+{% if notebook %}
+# This comment is only printed in a Jupyter notebook.
+{% endif %}
