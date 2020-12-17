@@ -76,14 +76,15 @@ st.markdown("<br>", unsafe_allow_html=True)
 # {
 #     "task1": "path/to/template",
 #     "task2": {
-#         "framework1": "path/to/template", 
+#         "framework1": "path/to/template",
 #         "framework2": "path/to/template"
 #     },
 # }
 template_dict = collections.defaultdict(dict)
-for template_dir in [
+template_dirs = [
     f for f in os.scandir("templates") if f.is_dir() and f.name != "example"
-]:
+]
+for template_dir in template_dirs:
     try:
         # Templates with task + framework.
         task, framework = template_dir.name.split("_")
@@ -94,8 +95,8 @@ for template_dir in [
 # print(template_dict)
 
 
-# Show selectors for task and framework in sidebar (based on template_dict). These 
-# selectors determine which template (from template_dict) is used (and also which 
+# Show selectors for task and framework in sidebar (based on template_dict). These
+# selectors determine which template (from template_dict) is used (and also which
 # template-specific sidebar components are shown below).
 with st.sidebar:
     st.write("## Task")
