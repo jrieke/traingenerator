@@ -29,13 +29,3 @@ pytest)
 comparable to the existing templates)
 - you added comments in your code that explain what it does
 - the PR explains in detail what's new
-
-
-## Some ideas for future work
-
-- add template for pytorch-lightning
-- add template for keras/tensorflow
-- add templates for other tasks, e.g. object detection, segmentation, 
-text classification, ...
-- allow more options in the sidebar (e.g. more hyperparameters)
-- add some tensorboard visualizations
