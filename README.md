@@ -46,7 +46,7 @@ Generate custom template code for PyTorch & sklearn, using a simple web UI built
 
 **Note: The steps below are only required if you want to contribute to traingenerator or run it locally.**
 
-## Adding templates
+## Adding new templates
 
 You can add your own template in 4 easy steps:
 

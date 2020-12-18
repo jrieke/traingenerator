@@ -21,8 +21,8 @@ def run_in_tmp_dir(code):
     with tempfile.TemporaryDirectory() as tmp_dir:
         cwd = os.getcwd()
         os.chdir(tmp_dir)
-        
-        # Use runpy instead of exec here because a) it doesn't interfere with 
+
+        # Use runpy instead of exec here because a) it doesn't interfere with
         # globals and b) it gives better error messages.
         with open("code.py", "w") as f:
             f.write(code)
@@ -48,7 +48,7 @@ def test_all_templates(subtests, pytestconfig):
     in its own test.
     """
 
-    # TODO: This uses pytest-subtests at the moment. This is better than testing 
+    # TODO: This uses pytest-subtests at the moment. This is better than testing
     # everything at once in this function but it's still not perfect:
     # - doesn't run tests in parallel
     # - doesn't produce intermediate output while running the tests
@@ -56,11 +56,18 @@ def test_all_templates(subtests, pytestconfig):
 
     # Find available templates (based on --template option).
     template_option = pytestconfig.getoption("template")
-    if template_option is None:  # use all templates except for "example" (default)
+    if template_option is None:
+        # Default: Use all templates except for "example" and ones that don't contain
+        # "test-inputs.yml".
         template_dirs = [
-            f for f in os.scandir("templates") if f.is_dir() and f.name != "example"
+            f
+            for f in os.scandir("templates")
+            if f.is_dir()
+            and f.name != "example"
+            and os.path.isfile(os.path.join(f, "test-inputs.yml"))
         ]
-    else:  # use only given template
+    else:
+        # Use only the template specified via --template.
         template_dirs = [PseudoDirEntry(os.path.join("templates", template_option))]
         if not os.path.exists(template_dirs[0].path):
             raise ValueError(
