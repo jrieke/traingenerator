@@ -60,7 +60,7 @@ dropdowns in the sidebar (see image).
 ✨ *Tip: Copy the [example template](templates/example) to get started more quickly.* 
 
 <p align="center">
-    <img src="docs/assets/dropdowns.png" width=300>
+    <img src="docs/assets/dropdowns.png" width=200>
 </p>
 
 2. **Add a file `sidebar.py` to the folder ([example](templates/example/sidebar.py)).** 
