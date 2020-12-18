@@ -10,8 +10,8 @@ sense and nobody else is working on this. The best way is to open an issue on th
 but you can also contact me on [Twitter](https://twitter.com/jrieke) or 
 [e-mail](mailto:johannes.rieke@gmail.com).
 
-As soon as you start working, you are very welcome to create a 
-[Work-in-progress PR](https://github.blog/2019-02-14-introducing-draft-pull-requests/)
+As soon as you start working, it's great if you create a 
+[work-in-progress PR](https://github.blog/2019-02-14-introducing-draft-pull-requests/)
 so that I and everyone else can give feedback as soon as possible. 
 
 
