@@ -76,7 +76,7 @@ template to this repo. [See example](templates/example/test-inputs.yml).
 That's it! 🎈 You don't have to change any code in the app itself. Your new template 
 will be automatically discovered by traingenerator and shown in the sidebar. 
 
-**Want to share your magic?** 🧙 PRs with new templates are welcome! Please have a look 
+**Want to share your magic?** 🧙 PRs are welcome! Please have a look 
 at [CONTRIBUTING.md](CONTRIBUTING.md). 
 
 
