@@ -56,9 +56,13 @@ shown in the sidebar. That's it! 🎈
 The folder name should be the task that your template solves (e.g. 
 `Image classification`). Optionally, you can add a framework name (e.g. 
 `Image classification_PyTorch`). Both names are automatically shown in the first two 
-dropdowns in the sidebar (i.e. the ones asking for *Which problem do you want to solve?* 
-and *In which framework?*). 
+dropdowns in the sidebar (see image). 
 ✨ *Tip: Copy the [example template](templates/example) to get started more quickly.* 
+
+<p align="center">
+    <img src="docs/assets/dropdowns.png" width=300>
+</p>
+
 2. **Add a file `sidebar.py` to the folder ([example](templates/example/sidebar.py)).** 
 It needs to contain a method `show()`, which displays all template-specific streamlit 
 components in the sidebar (i.e. everything below *Task*) and returns a dictionary of 
