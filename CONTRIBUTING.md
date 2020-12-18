@@ -23,8 +23,8 @@ Make sure that:
 - if you created a new template: it contains a file `test-inputs.yml`, which specifies 
 a few input values to test the code template (the test is then automatically run by 
 pytest)
-- you checked all new functionality live, i.e. in the running web app
 - you formatted all code with [black](https://github.com/psf/black)
+- you checked all new functionality live, i.e. in the running web app
 - any generated code is formatted nicely, both in .py and in .ipynb ("nicely" = 
 comparable to the existing templates)
 - you added comments in your code that explain what it does
