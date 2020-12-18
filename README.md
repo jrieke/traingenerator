@@ -80,7 +80,7 @@ template to this repo.
 **Want to share your magic?** 🧙 PRs are welcome! Please have a look 
 at [CONTRIBUTING.md](CONTRIBUTING.md). 
 
-**Ideas for new templates:** Keras/Tensorflow, Pytorch Lightning, object detection, 
+**Some ideas for new templates:** Keras/Tensorflow, Pytorch Lightning, object detection, 
 segmentation, text classification, ...
 
 
