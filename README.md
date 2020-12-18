@@ -48,7 +48,9 @@ Generate custom template code for PyTorch & sklearn, using a simple web UI built
 
 ## Adding new templates
 
-You can add your own template in 4 easy steps:
+You can add your own template in 4 easy steps, without changing any code in the 
+app itself. Your new template will be automatically discovered by traingenerator and 
+shown in the sidebar. That's it! 🎈
 
 1. **Create a folder under `./templates`.** 
 The folder name should be the task that your template solves (e.g. 
@@ -72,9 +74,6 @@ testing. If you run pytest (see below), it will automatically pick up this file,
 the code template with its values, and check that the generated code runs without 
 errors. This file is optional – but it's required if you want to contribute your 
 template to this repo. [See example](templates/example/test-inputs.yml).
-
-That's it! 🎈 You don't have to change any code in the app itself. Your new template 
-will be automatically discovered by traingenerator and shown in the sidebar. 
 
 **Want to share your magic?** 🧙 PRs are welcome! Please have a look 
 at [CONTRIBUTING.md](CONTRIBUTING.md). 
