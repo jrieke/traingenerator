@@ -67,7 +67,7 @@ st.markdown("<br>", unsafe_allow_html=True)
 2. Training code will be generated below
 3. Download and do magic! :sparkles:
 
-**NEW**: Add your own templates to traingenerator! [Guide](https://github.com/jrieke/traingenerator#adding-new-templates)
+**NEW**: Add your own templates to this app! [Guide](https://github.com/jrieke/traingenerator#adding-new-templates)
 
 ---
 """
