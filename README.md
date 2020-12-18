@@ -24,7 +24,7 @@
     🎉 traingenerator is now live! 🎉
     <br><br>
     Try it out: <br>
-    >>> <a href="https://traingenerator.jrieke.com">https://traingenerator.jrieke.com</a> <<<
+    <a href="https://traingenerator.jrieke.com">https://traingenerator.jrieke.com</a>
 </h3>
 
 <!--
@@ -44,11 +44,44 @@ Generate custom template code for PyTorch & sklearn, using a simple web UI built
 
 <br>
 
-**Note: The steps below are only required for developers who want to run/deploy traingenerator locally.**
+**Note: The steps below are only required if you want to contribute to traingenerator or run it locally.**
 
-## Contributing
+## Adding new templates
 
-PRs are welcome! Please have a look at [CONTRIBUTING.md](CONTRIBUTING.md).
+You can add your own template in 4 easy steps, without changing any code in the 
+app itself. Your new template will be automatically discovered by traingenerator and 
+shown in the sidebar. That's it! 🎈
+
+
+<img align="right" src="docs/assets/dropdowns.png" width=160>
+
+1. **Create a folder under `./templates`.** 
+The folder name should be the task that your template solves (e.g. 
+`Image classification`). Optionally, you can add a framework name (e.g. 
+`Image classification_PyTorch`). Both names are automatically shown in the first two 
+dropdowns in the sidebar (see image). 
+✨ *Tip: Copy the [example template](templates/example) to get started more quickly.* 
+1. **Add a file `sidebar.py` to the folder ([see example](templates/example/sidebar.py)).** 
+It needs to contain a method `show()`, which displays all template-specific streamlit 
+components in the sidebar (i.e. everything below *Task*) and returns a dictionary of 
+user inputs.
+3. **Add a file `code-template.py.jinja` to the folder ([see example](templates/example/code-template.py.jinja)).** 
+This [Jinja2 template](https://jinja.palletsprojects.com/en/2.11.x/templates/) is used 
+to generate the code. You can write normal Python code in it and modify it 
+(through Jinja) based on the user inputs in the sidebar (e.g. insert a parameter 
+value from the sidebar or show different code parts based on the user's selection). 
+4. **Optional: Add a file `test-inputs.yml` to the folder ([see example](templates/example/test-inputs.yml)).** 
+This simple YAML file should define a few possible user inputs that can be used for 
+testing. If you run pytest (see below), it will automatically pick up this file, render 
+the code template with its values, and check that the generated code runs without 
+errors. This file is optional – but it's required if you want to contribute your 
+template to this repo. 
+
+**Want to share your magic?** 🧙 PRs are welcome! Please have a look 
+at [CONTRIBUTING.md](CONTRIBUTING.md). 
+
+**Some ideas for new templates:** Keras/Tensorflow, Pytorch Lightning, object detection, 
+segmentation, text classification, ...
 
 
 ## Installation
@@ -108,9 +141,25 @@ heroku config:set REPO_NAME=<user/notebooks-repo>
 
 ## Testing
 
+First, install pytest and required plugins via:
+
+```bash
+pip install -r requirements-dev.txt
+```
+
+To run all tests: 
+
 ```bash
 pytest ./tests
 ```
 
-This generates Python codes with different configurations (just like the app would do) 
-and checks that they run. The streamlit app itself is not tested at the moment.
+Note that this only tests the code templates (i.e. it renders them with different 
+input values and makes sure that the code executes without error). The streamlit app 
+itself is not tested at the moment.
+
+You can also test an individual template by passing the name of the template dir to 
+`--template`, e.g.:
+
+```bash
+pytest ./tests --template "Image classification_scikit-learn"
+```

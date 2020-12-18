@@ -1,0 +1,12 @@
+# Values in this file are used to render the code template during testing. 
+
+# If you run pytest (see README.md), it will automatically discover this file and
+# `code-template.py.jinja`, render the code template for all parameter combinations 
+# in here and check that the code runs without errors. 
+
+# For each user input, you can specify a single value (e.g. key: value) or a few different 
+# values (e.g. below) that should be tested.
+
+model:
+  - Top model
+  - Role model

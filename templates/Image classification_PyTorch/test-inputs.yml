@@ -1,0 +1,20 @@
+model_func: resnet18
+data_format:
+  - Numpy arrays
+  - Image files
+gpu:
+  - True
+  - False
+checkpoint:
+  - True
+  - False
+visualization_tool:
+  - Not at all
+  - Tensorboard
+pretrained: False
+loss: CrossEntropyLoss
+optimizer: Adam
+lr: 0.001
+batch_size: 128
+num_epochs: 1
+print_every: 1

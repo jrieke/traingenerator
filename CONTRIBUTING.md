@@ -10,28 +10,22 @@ sense and nobody else is working on this. The best way is to open an issue on th
 but you can also contact me on [Twitter](https://twitter.com/jrieke) or 
 [e-mail](mailto:johannes.rieke@gmail.com).
 
+As soon as you start working, it's great if you create a 
+[work-in-progress PR](https://github.blog/2019-02-14-introducing-draft-pull-requests/)
+so that I and everyone else can give feedback as soon as possible. 
 
-## Before opening a PR
+
+## Before requesting a PR review
 
 Make sure that:
 
-- all existing tests are passing (see [README.md](README.md) on how to run tests)
-- you added new tests for your code (for now, you only need to make sure that any 
-generated code runs without errors, see 
-[tests/test_templates.py](tests/test_templates.py) for examples)
-- you tested all new functionality live, i.e. in the running web app
+- all tests are passing (see [README.md](README.md) on how to run tests)
+- if you created a new template: it contains a file `test-inputs.yml`, which specifies 
+a few input values to test the code template (the test is then automatically run by 
+pytest)
+- you checked all new functionality live, i.e. in the running web app
 - you formatted all code with [black](https://github.com/psf/black)
 - any generated code is formatted nicely, both in .py and in .ipynb ("nicely" = 
 comparable to the existing templates)
 - you added comments in your code that explain what it does
 - the PR explains in detail what's new
-
-
-## Some ideas for future work
-
-- add template for pytorch-lightning
-- add template for keras/tensorflow
-- add templates for other tasks, e.g. object detection, segmentation, 
-text classification, ...
-- allow more options in the sidebar (e.g. more hyperparameters)
-- add some tensorboard visualizations
