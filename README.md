@@ -59,11 +59,9 @@ The folder name should be the task that your template solves (e.g.
 dropdowns in the sidebar (see image). 
 ✨ *Tip: Copy the [example template](templates/example) to get started more quickly.* 
 
-<p align="center">
-    <img src="docs/assets/dropdowns.png" width=200>
-</p>
+<img align="right" src="docs/assets/dropdowns.png" width=200>
 
-2. **Add a file `sidebar.py` to the folder ([example](templates/example/sidebar.py)).** 
+1. **Add a file `sidebar.py` to the folder ([example](templates/example/sidebar.py)).** 
 It needs to contain a method `show()`, which displays all template-specific streamlit 
 components in the sidebar (i.e. everything below *Task*) and returns a dictionary of 
 user inputs.
