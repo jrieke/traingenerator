@@ -24,7 +24,7 @@
     🎉 traingenerator is now live! 🎉
     <br><br>
     Try it out: <br>
-    >>> <a href="https://traingenerator.jrieke.com">https://traingenerator.jrieke.com</a> <<<
+    <a href="https://traingenerator.jrieke.com">https://traingenerator.jrieke.com</a>
 </h3>
 
 <!--
