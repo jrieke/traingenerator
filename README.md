@@ -53,7 +53,7 @@ app itself. Your new template will be automatically discovered by traingenerator
 shown in the sidebar. That's it! 🎈
 
 
-<img align="right" src="docs/assets/dropdowns.png" width=180>
+<img align="right" src="docs/assets/dropdowns.png" width=160>
 
 1. **Create a folder under `./templates`.** 
 The folder name should be the task that your template solves (e.g. 
