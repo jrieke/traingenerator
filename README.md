@@ -61,16 +61,16 @@ The folder name should be the task that your template solves (e.g.
 `Image classification_PyTorch`). Both names are automatically shown in the first two 
 dropdowns in the sidebar (see image on the right). 
 ✨ *Tip: Copy the [example template](templates/example) to get started more quickly.* 
-2. **Add a file `sidebar.py` to the folder ([example](templates/example/sidebar.py)).** 
+2. **Add a file `sidebar.py` to the folder ([see example](templates/example/sidebar.py)).** 
 It needs to contain a method `show()`, which displays all template-specific streamlit 
 components in the sidebar (i.e. everything below *Task*) and returns a dictionary of 
 user inputs.
-3. **Add a file `code-template.py.jinja` to the folder ([example](templates/example/code-template.py.jinja)).** 
+3. **Add a file `code-template.py.jinja` to the folder ([see example](templates/example/code-template.py.jinja)).** 
 This [Jinja2 template](https://jinja.palletsprojects.com/en/2.11.x/templates/) is used 
 to generate the code. You can write normal Python code in it and modify it 
 (through Jinja) based on the user inputs in the sidebar (e.g. insert a parameter 
 value from the sidebar or show different code parts based on the user's selection). 
-4. **Optional: Add a file `test-inputs.yml` to the folder ([example](templates/example/test-inputs.yml)).** 
+4. **Optional: Add a file `test-inputs.yml` to the folder ([see example](templates/example/test-inputs.yml)).** 
 This simple YAML file should define a few possible user inputs that can be used for 
 testing. If you run pytest (see below), it will automatically pick up this file, render 
 the code template with its values, and check that the generated code runs without 
