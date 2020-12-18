@@ -7,6 +7,7 @@
 </p>
 
 <p align="center">
+    <a href="https://twitter.com/jrieke"><img src="https://img.shields.io/twitter/follow/jrieke?color=blue&label=Follow%20%40jrieke&logo=twitter&style=plastic"></a>
     <a href="https://www.buymeacoffee.com/jrieke"><img src="https://img.shields.io/badge/Buy%20me%20a-coffee-orange.svg?logo=buy-me-a-coffee&logoColor=orange"></a>
     <a href="LICENSE"><img src="https://img.shields.io/github/license/jrieke/traingenerator.svg"></a>
     <a href="https://github.com/psf/black"><img src="https://img.shields.io/badge/code%20style-black-000000.svg" alt="Code style: black"></a>
