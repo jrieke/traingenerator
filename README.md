@@ -70,8 +70,8 @@ value from the sidebar or show different code parts based on the user's selectio
 This simple YAML file should define a few possible user inputs that can be used for 
 testing. If you run pytest (see below), it will automatically pick up this file, render 
 the code template with its values, and check that the generated code runs without 
-errors. This file is required if you want to contribute your template to this repo. 
-[See example](templates/example/test-inputs.yml).
+errors. This file is optional – but it's required if you want to contribute your 
+template to this repo. [See example](templates/example/test-inputs.yml).
 
 That's it! 🎈 You don't have to change any code in the app itself. Your new template 
 will be automatically discovered by traingenerator and shown in the sidebar. 
