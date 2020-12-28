@@ -56,7 +56,7 @@ st.image(MAGE_EMOJI_URL, width=80)
 """
 # Code Generator for Machine Learning
 
-[![Star](https://img.shields.io/github/stars/jrieke/traingenerator.svg?label=Star&logo=github&style=social)](https://gitHub.com/jrieke/traingenerator/stargazers)
+[![Star](https://img.shields.io/github/stars/jrieke/traingenerator.svg?logo=github&style=social)](https://gitHub.com/jrieke/traingenerator/stargazers)
 &nbsp[![Follow](https://img.shields.io/twitter/follow/jrieke?style=social)](https://www.twitter.com/jrieke)
 &nbsp[![Buy me a coffee](https://img.shields.io/badge/Buy%20me%20a%20coffee--yellow.svg?logo=buy-me-a-coffee&logoColor=orange&style=social)](https://www.buymeacoffee.com/jrieke)
 """
@@ -66,8 +66,6 @@ st.markdown("<br>", unsafe_allow_html=True)
 1. Specify model in the sidebar *(click on **>** if closed)*
 2. Training code will be generated below
 3. Download and do magic! :sparkles:
-
-**NEW**: Add your own templates to this site! [Guide](https://github.com/jrieke/traingenerator#adding-new-templates)
 
 ---
 """
@@ -101,6 +99,12 @@ for template_dir in template_dirs:
 # selectors determine which template (from template_dict) is used (and also which
 # template-specific sidebar components are shown below).
 with st.sidebar:
+    st.info(
+        "🎈 **NEW:** Add your own code template to this site! [Guide](https://github.com/jrieke/traingenerator#adding-new-templates)"
+    )
+    # st.error(
+    #     "Found a bug? [Report it](https://github.com/jrieke/traingenerator/issues) 🐛"
+    # )
     st.write("## Task")
     task = st.selectbox(
         "Which problem do you want to solve?", list(template_dict.keys())
@@ -142,6 +146,9 @@ with col3:
     utils.download_button(notebook, "generated-notebook.ipynb", "📓 Download (.ipynb)")
 colab_error = st.empty()
 
+# st.success(
+#     "Enjoy this site? Leave a star on [the Github repo](https://github.com/jrieke/traingenerator) :)"
+# )
 
 # Display code.
 # TODO: Think about writing Installs on extra line here.
