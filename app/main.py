@@ -84,6 +84,7 @@ template_dict = collections.defaultdict(dict)
 template_dirs = [
     f for f in os.scandir("templates") if f.is_dir() and f.name != "example"
 ]
+template_dirs = sorted(template_dirs, key=lambda e: e.name)
 for template_dir in template_dirs:
     try:
         # Templates with task + framework.
