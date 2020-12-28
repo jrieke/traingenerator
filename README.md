@@ -3,7 +3,7 @@
 </h1>
 
 <p align="center">
-    <strong>🧙&nbsp; A web app to generate template code for machine learning</strong>
+    <strong>🧙&nbsp; A web app to generate template code for machine learning ✨</strong>
 </p>
 
 <p align="center">
@@ -39,7 +39,7 @@
 
 <br>
 
-Generate custom template code for PyTorch & sklearn, using a simple web UI built with [streamlit](https://www.streamlit.io/). traingenerator offers multiple options for preprocessing, model setup, training, and visualization (using Tensorboard or comet.ml). It exports to .py, Jupyter Notebook, or  [Google Colab](https://colab.research.google.com/). The perfect tool to jumpstart your next machine learning project! ✨
+Generate custom template code for PyTorch & sklearn, using a simple web UI built with [streamlit](https://www.streamlit.io/). traingenerator offers multiple options for preprocessing, model setup, training, and visualization (using Tensorboard or comet.ml). It exports to .py, Jupyter Notebook, or  [Google Colab](https://colab.research.google.com/). The perfect tool to jumpstart your next machine learning project!
 
 <br>
 
