@@ -6,9 +6,9 @@ That's very welcome! :heart:
 ## Before you start
 
 It's best if you get in touch with me so we can quickly check that your plan makes 
-sense and nobody else is working on this. The best way is to open an issue on this repo 
-but you can also contact me on [Twitter](https://twitter.com/jrieke) or 
-[e-mail](mailto:johannes.rieke@gmail.com).
+sense and nobody else is working on it. The best way is to [write on Gitter](https://gitter.im/jrieke/traingenerator) 
+or open an issue in this repo. You can also reach out on [Twitter](https://twitter.com/jrieke) 
+or via [e-mail](mailto:johannes.rieke@gmail.com) if that makes you feel more comfortable :)
 
 As soon as you start working, it's great if you create a 
 [work-in-progress PR](https://github.blog/2019-02-14-introducing-draft-pull-requests/)

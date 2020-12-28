@@ -7,9 +7,11 @@
 </p>
 
 <p align="center">
-    <a href="https://twitter.com/jrieke"><img src="https://img.shields.io/twitter/follow/jrieke?color=blue&label=Follow%20%40jrieke&logo=twitter&style=plastic"></a>
-    <a href="https://www.buymeacoffee.com/jrieke"><img src="https://img.shields.io/badge/Buy%20me%20a-coffee-orange.svg?logo=buy-me-a-coffee&logoColor=orange"></a>
-    <a href="LICENSE"><img src="https://img.shields.io/github/license/jrieke/traingenerator.svg"></a>
+    <!-- <a href="https://twitter.com/jrieke"><img src="https://img.shields.io/twitter/follow/jrieke?color=blue&label=Follow%20%40jrieke&logo=twitter&style=plastic"></a> -->
+    <a href="https://gitter.im/jrieke/traingenerator"><img src="https://badges.gitter.im/jrieke/traingenerator.svg" alt="Gitter"></a>
+    <a href="https://traingenerator.jrieke.com/"><img src="https://heroku-shields.herokuapp.com/traingenerator" alt="Heroku"></a>
+    <!-- <a href="https://www.buymeacoffee.com/jrieke"><img src="https://img.shields.io/badge/Buy%20me%20a-coffee-orange.svg?logo=buy-me-a-coffee&logoColor=orange"></a> -->
+    <!-- <a href="LICENSE"><img src="https://img.shields.io/github/license/jrieke/traingenerator.svg"></a> -->
     <a href="https://github.com/psf/black"><img src="https://img.shields.io/badge/code%20style-black-000000.svg" alt="Code style: black"></a>
 </p>
 
@@ -41,18 +43,25 @@ Generate custom template code for PyTorch & sklearn, using a simple web UI built
 
 <br>
 
+*For updates, [follow me on Twitter](https://twitter.com/jrieke), and if you like traingenerator, you can [buy me a coffee](https://www.buymeacoffee.com/jrieke) ☺️*
+
+<br>
+
 ---
 
 <br>
 
-**Note: The steps below are only required if you want to contribute to traingenerator or run it locally.**
-
 ## Adding new templates
 
-You can add your own template in 4 easy steps, without changing any code in the 
-app itself. Your new template will be automatically discovered by traingenerator and 
-shown in the sidebar. That's it! 🎈
+You can add your own template in 4 easy steps (see below), without changing any code 
+in the app itself. Your new template will be automatically discovered by traingenerator 
+and shown in the sidebar. That's it! 🎈
 
+**Want to share your magic?** 🧙 PRs are welcome! Please have a look 
+at [CONTRIBUTING.md](CONTRIBUTING.md) and write on [Gitter](https://gitter.im/jrieke/traingenerator). 
+
+**Some ideas for new templates:** Keras/Tensorflow, Pytorch Lightning, object detection, 
+segmentation, text classification, ...
 
 <img align="right" src="docs/assets/dropdowns.png" width=160>
 
@@ -78,14 +87,11 @@ the code template with its values, and check that the generated code runs withou
 errors. This file is optional – but it's required if you want to contribute your 
 template to this repo. 
 
-**Want to share your magic?** 🧙 PRs are welcome! Please have a look 
-at [CONTRIBUTING.md](CONTRIBUTING.md). 
-
-**Some ideas for new templates:** Keras/Tensorflow, Pytorch Lightning, object detection, 
-segmentation, text classification, ...
-
 
 ## Installation
+
+**Note: You only need to install traingenerator if you want to contribute or run it 
+locally. If you just want to use it, go [here](https://traingenerator.jrieke.com).**
 
 ```bash
 git clone https://github.com/jrieke/traingenerator.git

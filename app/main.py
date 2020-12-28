@@ -84,6 +84,8 @@ template_dict = collections.defaultdict(dict)
 template_dirs = [
     f for f in os.scandir("templates") if f.is_dir() and f.name != "example"
 ]
+# TODO: Find a good way to sort templates, e.g. by prepending a number to their name
+#   (e.g. 1_Image classification_PyTorch).
 template_dirs = sorted(template_dirs, key=lambda e: e.name)
 for template_dir in template_dirs:
     try:
