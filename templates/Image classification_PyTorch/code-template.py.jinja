@@ -180,7 +180,19 @@ model = models.{{ model_func }}(pretrained={{ pretrained }})
 model = model.to(device)
 loss_func = nn.{{ loss }}()
 optimizer = optim.{{ optimizer }}(model.parameters(), lr=lr)
+num_classes = {{ num_classes }}
 
+{% if not num_classes == 1000 %}
+{% if "resnet" in model_func %}
+model.fc = torch.nn.Linear(in_features = model.fc.in_features, out_features=num_classes, bias=True)
+{% endif %}
+{% if "alexnet" in model_func or "vgg" in model_func %}
+model.classifier[-1] = torch.nn.Linear(in_features = model.classifier[-1].in_features, out_features=num_classes, bias=True)
+{% endif %}
+{% if "densenet" in model_func %}
+model.classifier = torch.nn.Linear(in_features = model.classifier.in_features, out_features=num_classes, bias=True)
+{% endif %}
+{% endif %}
 
 {{ header("Training") }}
 # Set up pytorch-ignite trainer and evaluator.
