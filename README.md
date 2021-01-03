@@ -43,7 +43,7 @@ Generate custom template code for PyTorch & sklearn, using a simple web UI built
 
 <br>
 
-*For updates, [follow me on Twitter](https://twitter.com/jrieke), and if you like traingenerator, you can [buy me a coffee](https://www.buymeacoffee.com/jrieke) ☺️*
+*For updates, [follow me on Twitter](https://twitter.com/jrieke), and if you like this project, please [consider sponsoring](https://github.com/sponsors/jrieke) ☺️*
 
 <br>
 
