@@ -1,0 +1,167 @@
+# Before running, install required packages:
+{% if notebook %}
+
+!
+{%- else %}
+#
+{%- endif %}
+ pip install numpy tensorflow{% if visualization_tool == "Tensorboard" %} tensorboard{% endif %}{% if visualization_tool == "comet.ml" %} comet_ml{% endif %}
+
+{% if notebook %}
+
+
+# ---
+{% endif %}
+
+import numpy as np
+import tensorflow as tf
+from tensorflow import keras
+from tensorflow.keras.preprocessing import image_dataset_from_directory
+{% if data_format == "Image files" %}
+import urllib
+import zipfile
+{% endif %}
+{% if visualization_tool == "Tensorboard" or checkpoint %}
+from datetime import datetime
+{% endif %}
+{% if visualization_tool == "Tensorboard" %}
+from tensorboard import SummaryWriter
+{% endif %}
+{% if checkpoint %}
+from pathlib import Path
+{% endif %}
+
+{% if data_format == "Numpy arrays" %}
+def fake_data():
+    # 4 images of shape 1x16x16 with labels 0, 1, 2, 3
+    return [np.random.rand(4, 1, 16, 16), np.arange(4)]
+
+{% elif data_format == "Image files" %}
+
+
+# COMMENT THIS OUT IF YOU USE YOUR OWN DATA.
+# Download example data into ./data/image-data (4 image files, 2 for "dog", 2 for "cat").
+url = "https://github.com/jrieke/traingenerator/raw/main/data/fake-image-data.zip"
+zip_path, _ = urllib.request.urlretrieve(url)
+with zipfile.ZipFile(zip_path, "r") as f:
+    f.extractall("data")
+
+{% endif %}
+
+{{ header("Setup") }}
+{% if data_format == "Numpy arrays" %}
+# INSERT YOUR DATA HERE
+# Expected format: [images, labels]
+# - images has array shape (num samples, color channels, height, width)
+# - labels has array shape (num samples, )
+train_data = fake_data()  # required
+val_data = fake_data()    # optional
+test_data = None          # optional
+{% elif data_format == "Image files" %}
+# INSERT YOUR DATA HERE
+# Expected format: One folder per class, e.g.
+# train
+# --- dogs
+# |   +-- lassie.jpg
+# |   +-- komissar-rex.png
+# --- cats
+# |   +-- garfield.png
+# |   +-- smelly-cat.png
+#
+# Example: https://github.com/jrieke/traingenerator/tree/main/data/image-data
+train_data = "data/image-data"  # required
+val_data = "data/image-data"    # optional
+test_data = None                # optional
+{% endif %}
+
+# Set up hyperparameters.
+lr = {{ lr }}
+batch_size = {{ batch_size }}
+num_epochs = {{ num_epochs}}
+
+{# TODO Add Image_Size #}
+img_size = (224,224)
+
+# Set up logging.
+
+{% if visualization_tool == "Tensorboard" or checkpoint %}
+experiment_id = datetime.now().strftime('%Y-%m-%d_%H-%M-%S')
+{% endif %}
+{% if visualization_tool == "Tensorboard" %}
+writer = SummaryWriter(logdir=f"logs/{experiment_id}")
+{% elif visualization_tool == "comet.ml" %}
+experiment = Experiment("{{ comet_api_key }}"{% if comet_project %}, project_name="{{ comet_project }}"{% endif %})
+{% endif %}
+{% if checkpoint %}
+checkpoint_dir = Path(f"checkpoints/{experiment_id}")
+checkpoint_dir.mkdir(parents=True, exist_ok=True)
+{% endif %}
+print_every = {{ print_every }}  # batches
+
+# Set up device.
+{% if gpu %}
+use_cuda = tf.device("GPU")
+{% else %}
+use_cuda = False
+{% endif %}
+device = tf.device("CPU")
+
+{{ header("Preprocessing") }}
+def preprocess(data, name):
+    if data is None:  # val/test can be empty
+        return None
+        
+    {% if data_format == "Image files" %}
+    # Read image files to tensorflow dataset.
+    dataset = tf.keras.preprocessing.image.ImageDataGenerator(rescale=1./255, rotation_range=20, horizontal_flip=True)
+    loader = dataset.flow_from_directory(data, target_size=(224,224))
+    {# TODO: Add more data_augmentation #}
+    {% elif data_format == "Numpy arrays" %}
+    images, labels = data
+
+    # Rescale images to 0-255 and convert to uint8.
+    # Note: This is done for each dataset individually, which is usually ok if all 
+    # datasets look similar. If not, scale all datasets based on min/ptp of train set.
+    images = (images - np.min(images)) / np.ptp(images) * 255
+    images = images.astype(np.uint8)
+
+    # If images are grayscale, convert to RGB by duplicating channels.
+    if images.shape[1] == 1:
+        images = np.stack((images[:, 0],) * 3, axis=1)
+    )
+
+    {# This code could be improved #}
+    Pil_image = []
+
+    for i  in range(len(data[0])):
+        Pil_image.append(tf.keras.preprocessing.image.array_to_img(images[i],data_format ="channels_first"))
+        Pil_image[i] = Pil_image[i].resize((224,224)
+        Pil_image[i] = tf.keras.preprocessing.image.img_to_array(Pil_image[i])
+    
+    loader = tf.convert_to_tensor(Pil_image)
+    {% endif %}
+
+    return loader
+
+train_loader = preprocess(train_data, "train")
+val_loader = preprocess(val_data, "val")
+test_loader = preprocess(test_data, "test")
+
+{{ header("Model") }}
+IMG_SHAPE = img_size + (3,)
+model = tf.keras.applications.MobileNetV2(input_shape=IMG_SHAPE,
+                                               include_top=True,
+                                               weights='imagenet', classes=1000)
+
+
+model.trainable = True  
+
+
+model.compile(optimizer=tf.keras.optimizers.Adam(lr={{lr}}),
+              loss=tf.keras.losses.BinaryCrossentropy(from_logits=True),
+              metrics=['accuracy'])
+
+history = model.fit(train_loader,
+                    batch_size={{batch_size}},
+                    epochs={{num_epochs}},
+                    validation_data=val_loader)
