@@ -98,14 +98,6 @@ checkpoint_dir.mkdir(parents=True, exist_ok=True)
 {% endif %}
 print_every = {{ print_every }}  # batches
 
-# Set up device.
-{% if gpu %}
-use_cuda = tf.device("GPU")
-{% else %}
-use_cuda = False
-{% endif %}
-device = tf.device("CPU")
-
 {{ header("Preprocessing") }}
 def preprocess(data, name):
     if data is None:  # val/test can be empty
