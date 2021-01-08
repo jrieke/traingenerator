@@ -5,7 +5,7 @@
 {%- else %}
 #
 {%- endif %}
- pip install numpy tensorflow{% if visualization_tool == "Tensorboard" %} tensorboard{% endif %}{% if visualization_tool == "comet.ml" %} comet_ml{% endif %}
+ pip install numpy tensorflow{% if visualization_tool == "comet.ml" %} comet_ml{% endif %}
 
 {% if notebook %}
 
@@ -23,9 +23,6 @@ import zipfile
 {% endif %}
 {% if visualization_tool == "Tensorboard" or checkpoint %}
 from datetime import datetime
-{% endif %}
-{% if visualization_tool == "Tensorboard" %}
-from tensorboard import SummaryWriter
 {% endif %}
 {% if checkpoint %}
 from pathlib import Path
@@ -86,10 +83,9 @@ img_size = (224,224)
 
 {% if visualization_tool == "Tensorboard" or checkpoint %}
 experiment_id = datetime.now().strftime('%Y-%m-%d_%H-%M-%S')
+tensorboard_callback = tf.keras.callbacks.TensorBoard(log_dir=experiment_id, histogram_freq=1)
 {% endif %}
-{% if visualization_tool == "Tensorboard" %}
-writer = SummaryWriter(logdir=f"logs/{experiment_id}")
-{% elif visualization_tool == "comet.ml" %}
+{% if visualization_tool == "comet.ml" %}
 experiment = Experiment("{{ comet_api_key }}"{% if comet_project %}, project_name="{{ comet_project }}"{% endif %})
 {% endif %}
 {% if checkpoint %}
@@ -106,7 +102,7 @@ def preprocess(data, name):
     {% if data_format == "Image files" %}
     # Read image files to tensorflow dataset.
     dataset = tf.keras.preprocessing.image.ImageDataGenerator(rescale=1./255, rotation_range=20, horizontal_flip=True)
-    loader = dataset.flow_from_directory(data, target_size=(224,224))
+    loader = dataset.flow_from_directory(data, target_size=img_size)
     {# TODO: Add more data_augmentation #}
     {% elif data_format == "Numpy arrays" %}
     images, labels = data
@@ -148,12 +144,11 @@ model = tf.keras.applications.MobileNetV2(input_shape=IMG_SHAPE,
 
 model.trainable = True  
 
-
 model.compile(optimizer=tf.keras.optimizers.Adam(lr={{lr}}),
-              loss=tf.keras.losses.BinaryCrossentropy(from_logits=True),
-              metrics=['accuracy'])
+              loss=tf.keras.losses.CategoricalCrossentropy(from_logits=True))
 
-history = model.fit(train_loader,
-                    batch_size={{batch_size}},
-                    epochs={{num_epochs}},
-                    validation_data=val_loader)
+model.fit(train_loader,
+        batch_size={{batch_size}},
+        epochs={{num_epochs}},
+        validation_data=val_loader,
+        callbacks=[tensorboard_callback])
