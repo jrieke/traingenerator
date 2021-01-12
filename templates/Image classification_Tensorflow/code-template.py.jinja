@@ -78,19 +78,21 @@ num_epochs = {{ num_epochs}}
 
 {# TODO Add Image_Size #}
 img_size = (224,224)
+img_shape = img_size + (3,)
 
 # Set up logging.
 
 {% if visualization_tool == "Tensorboard" or checkpoint %}
 experiment_id = datetime.now().strftime('%Y-%m-%d_%H-%M-%S')
+{% endif %}
+{% if visualization_tool == "Tensorboard" %}
 tensorboard_callback = tf.keras.callbacks.TensorBoard(log_dir=experiment_id, histogram_freq=1)
 {% endif %}
 {% if visualization_tool == "comet.ml" %}
 experiment = Experiment("{{ comet_api_key }}"{% if comet_project %}, project_name="{{ comet_project }}"{% endif %})
 {% endif %}
 {% if checkpoint %}
-checkpoint_dir = Path(f"checkpoints/{experiment_id}")
-checkpoint_dir.mkdir(parents=True, exist_ok=True)
+checkpoint_dir = tf.keras.callbacks.ModelCheckpoint(filepath='checkpoints/{experiment_id}/model.{epoch:02d}-{val_loss:.2f}.h5')
 {% endif %}
 print_every = {{ print_every }}  # batches
 
@@ -136,19 +138,27 @@ val_loader = preprocess(val_data, "val")
 test_loader = preprocess(test_data, "test")
 
 {{ header("Model") }}
-IMG_SHAPE = img_size + (3,)
-model = tf.keras.applications.MobileNetV2(input_shape=IMG_SHAPE,
+
+model = tf.keras.applications.MobileNetV2(input_shape=img_shape,
                                                include_top=True,
                                                weights='imagenet', classes=1000)
 
 
 model.trainable = True  
 
-model.compile(optimizer=tf.keras.optimizers.Adam(lr={{lr}}),
-              loss=tf.keras.losses.CategoricalCrossentropy(from_logits=True))
+model.compile(optimizer = tf.keras.optimizers.{{ optimizer }}(lr={{lr}}),
+              loss = "{{ loss }}",
+              metrics = ["accuracy"])
 
 model.fit(train_loader,
         batch_size={{batch_size}},
         epochs={{num_epochs}},
-        validation_data=val_loader,
-        callbacks=[tensorboard_callback])
+        validation_data=val_loader
+        {% if visualization_tool == "Tensorboard" and checkpoint%}
+        ,callbacks = [tensorboard_callback, checkpoint_dir]
+        {% elif checkpoint %}
+        ,callbacks = [checkpoint_dir]
+        {% elif visualization_tool == "Tensorboard" %}
+        ,callbacks = [tensorboard_callback]
+        {% endif %}
+        )

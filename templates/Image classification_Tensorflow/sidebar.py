@@ -108,7 +108,7 @@ def show():
             st.write("Scale mean and std for pre-trained model")
 
         st.write("## Training")
-        inputs["gpu"] = st.checkbox("Use GPU if available", True)
+        #inputs["gpu"] = st.checkbox("Use GPU if available", True)
         inputs["checkpoint"] = st.checkbox("Save model checkpoint each epoch")
         if inputs["checkpoint"]:
             st.markdown(
@@ -116,7 +116,7 @@ def show():
                 unsafe_allow_html=True,
             )
         inputs["loss"] = st.selectbox(
-            "Loss function", ("CrossEntropyLoss", "BCEWithLogitsLoss")
+            "Loss function", ("sparse_categorical_crossentropy", "binary_crossentropy")
         )
         inputs["optimizer"] = st.selectbox("Optimizer", list(OPTIMIZERS.keys()))
         default_lr = OPTIMIZERS[inputs["optimizer"]]
