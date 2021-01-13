@@ -4,4 +4,4 @@ headless = true
 port = $PORT
 enableCORS = false
 " > ~/.streamlit/config.toml
-python scripts/add-google-analytics.py
+python scripts/update-index-html.py
