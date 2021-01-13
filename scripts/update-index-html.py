@@ -1,5 +1,8 @@
 """
-Adds tracking code for Google Analytics to a streamlit app.
+Update index.html from streamlit by 
+
+- adding tracking code for Google Analytics
+- adding meta tags for social preview
 
 WARNING: This changes your existing streamlit installation (specifically the file 
 static/index.html in streamlit's main folder). It should only be called once after 
@@ -28,17 +31,16 @@ def replace_in_file(filename, oldvalue, newvalue):
         f.write(filedata)
 
 
-# Load tag from environment variables.
-load_dotenv()
-tag = os.getenv("GOOGLE_ANALYTICS_TAG")
-
 # Find path to streamlit's index.html.
 st_dir = os.path.dirname(st.__file__)
 index_filename = os.path.join(st_dir, "static", "index.html")
 
-# Insert tracking code.
-size_before = os.stat(index_filename).st_size
+# Insert tracking code for Google Analytics.
+load_dotenv()
+tag = os.getenv("GOOGLE_ANALYTICS_TAG")
 tracking_code = f"""<!-- Global site tag (gtag.js) - Google Analytics --><script async src="https://www.googletagmanager.com/gtag/js?id={tag}"></script><script>window.dataLayer = window.dataLayer || []; function gtag(){{dataLayer.push(arguments);}} gtag('js', new Date()); gtag('config', '{tag}');</script>"""
+
+size_before = os.stat(index_filename).st_size
 replace_in_file(index_filename, "<head>", "<head>" + tracking_code)
 size_after = os.stat(index_filename).st_size
 
