@@ -49,7 +49,8 @@ print("Size before:", size_before)
 print("Size after: ", size_after)
 
 # Insert meta tags for social preview.
-# More info on meta tags here: https://css-tricks.com/essential-meta-tags-social-media/
+# Older info but good summary: https://css-tricks.com/essential-meta-tags-social-media/
+# 2020 info: https://stackoverflow.com/questions/19778620/provide-an-image-for-whatsapp-link-sharing
 META_TAGS = """
 <!--  Essential META Tags -->
 <meta property="og:title" content="Traingenerator">
