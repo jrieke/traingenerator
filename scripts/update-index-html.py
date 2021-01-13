@@ -54,7 +54,7 @@ META_TAGS = """
 <!--  Essential META Tags -->
 <meta property="og:title" content="Traingenerator">
 <meta property="og:description" content="🧙 A web app to generate template code for machine learning">
-<meta property="og:image" content="https://github.com/jrieke/traingenerator/raw/main/docs/assets/social-preview.jpg">
+<meta property="og:image" content="https://github.com/jrieke/traingenerator/raw/main/docs/assets/social-preview-tiny.png">
 <meta property="og:url" content="https://traingenerator.jrieke.com/">
 <meta name="twitter:card" content="summary_large_image">
 
