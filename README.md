@@ -170,3 +170,9 @@ You can also test an individual template by passing the name of the template dir
 ```bash
 pytest ./tests --template "Image classification_scikit-learn"
 ```
+
+---
+
+The mage image used in Traingenerator is from 
+[Twitter's Twemoji library](https://github.com/twitter/twemoji) and 
+released under Creative Commons Attribution 4.0 International Public License.
