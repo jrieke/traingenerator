@@ -14,20 +14,6 @@ import os
 from dotenv import load_dotenv
 
 
-META_TAGS = """
-<!--  Essential META Tags -->
-<meta property="og:title" content="Traingenerator">
-<meta property="og:description" content="🧙 A web app to generate template code for machine learning">
-<meta property="og:image" content="https://github.com/jrieke/traingenerator/blob/main/docs/assets/social-preview.png">
-<meta property="og:url" content="https://traingenerator.jrieke.com/">
-<meta name="twitter:card" content="summary_large_image">
-
-<!--  Non-Essential, But Recommended -->
-<meta property="og:site_name" content="Traingenerator">
-<meta name="twitter:image:alt" content="Traingenerator Preview">
-"""
-
-
 def replace_in_file(filename, oldvalue, newvalue):
     """Replace string in a file and optionally create backup_filename."""
     # Read in the file
@@ -61,6 +47,19 @@ print("Size before:", size_before)
 print("Size after: ", size_after)
 
 # Insert meta tags for social preview.
+META_TAGS = """
+<!--  Essential META Tags -->
+<meta property="og:title" content="Traingenerator">
+<meta property="og:description" content="🧙 A web app to generate template code for machine learning">
+<meta property="og:image" content="https://github.com/jrieke/traingenerator/raw/main/docs/assets/social-preview.png">
+<meta property="og:url" content="https://traingenerator.jrieke.com/">
+<meta name="twitter:card" content="summary_large_image">
+
+<!--  Non-Essential, But Recommended -->
+<meta property="og:site_name" content="Traingenerator">
+<meta name="twitter:image:alt" content="Traingenerator Preview">
+"""
+
 size_before = os.stat(index_filename).st_size
 replace_in_file(index_filename, "<head>", "<head>" + META_TAGS)
 size_after = os.stat(index_filename).st_size
