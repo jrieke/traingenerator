@@ -53,7 +53,7 @@ print("Size after: ", size_after)
 # 2020 info: https://stackoverflow.com/questions/19778620/provide-an-image-for-whatsapp-link-sharing
 META_TAGS = """
 <!--  Essential META Tags -->
-<meta property="og:title" content="Traingenerator">
+<meta property="og:title" content="Traingenerator | Template Code for ML">
 <meta property="og:description" content="🧙 A web app to generate template code for machine learning">
 <meta property="og:image" content="https://github.com/jrieke/traingenerator/raw/main/docs/assets/social-preview-tiny.png">
 <meta property="og:url" content="https://traingenerator.jrieke.com/">
