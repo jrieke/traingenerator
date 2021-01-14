@@ -1,5 +1,5 @@
 <h1 align="center">
-    traingenerator
+    Traingenerator
 </h1>
 
 <p align="center">
@@ -24,7 +24,7 @@
 <br>
 
 <h3 align="center">
-    🎉 traingenerator is now live! 🎉
+    🎉 Traingenerator is now live! 🎉
     <br><br>
     Try it out: <br>
     <a href="https://traingenerator.jrieke.com">https://traingenerator.jrieke.com</a>
@@ -39,7 +39,7 @@
 
 <br>
 
-Generate custom template code for PyTorch & sklearn, using a simple web UI built with [streamlit](https://www.streamlit.io/). traingenerator offers multiple options for preprocessing, model setup, training, and visualization (using Tensorboard or comet.ml). It exports to .py, Jupyter Notebook, or  [Google Colab](https://colab.research.google.com/). The perfect tool to jumpstart your next machine learning project!
+Generate custom template code for PyTorch & sklearn, using a simple web UI built with [streamlit](https://www.streamlit.io/). Traingenerator offers multiple options for preprocessing, model setup, training, and visualization (using Tensorboard or comet.ml). It exports to .py, Jupyter Notebook, or  [Google Colab](https://colab.research.google.com/). The perfect tool to jumpstart your next machine learning project!
 
 <br>
 
@@ -54,7 +54,7 @@ Generate custom template code for PyTorch & sklearn, using a simple web UI built
 ## Adding new templates
 
 You can add your own template in 4 easy steps (see below), without changing any code 
-in the app itself. Your new template will be automatically discovered by traingenerator 
+in the app itself. Your new template will be automatically discovered by Traingenerator 
 and shown in the sidebar. That's it! 🎈
 
 **Want to share your magic?** 🧙 PRs are welcome! Please have a look 
@@ -90,7 +90,7 @@ template to this repo.
 
 ## Installation
 
-**Note: You only need to install traingenerator if you want to contribute or run it 
+**Note: You only need to install Traingenerator if you want to contribute or run it 
 locally. If you just want to use it, go [here](https://traingenerator.jrieke.com).**
 
 ```bash
