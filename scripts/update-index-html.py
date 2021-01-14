@@ -2,6 +2,7 @@
 Update index.html from streamlit by 
 
 - adding tracking code for Google Analytics
+- adding meta tags for search engines
 - adding meta tags for social preview
 
 WARNING: This changes your existing streamlit installation (specifically the file 
@@ -48,18 +49,18 @@ print("Inserted tracking code into:", index_filename)
 print("Size before:", size_before)
 print("Size after: ", size_after)
 
-# Insert meta tags for social preview.
+# Insert meta tags for search & social preview.
 # Older info but good summary: https://css-tricks.com/essential-meta-tags-social-media/
 # 2020 info: https://stackoverflow.com/questions/19778620/provide-an-image-for-whatsapp-link-sharing
 META_TAGS = """
-<!--  Essential META Tags -->
+<!-- Meta tags for search engines -->
+<meta name="description" content="A web app to generate template code for machine learning">
+<!-- Meta tags for social preview -->
 <meta property="og:title" content="Traingenerator | Template Code for ML">
-<meta property="og:description" content="🧙 A web app to generate template code for machine learning">
+<meta property="og:description" content="A web app to generate template code for machine learning">
 <meta property="og:image" content="https://github.com/jrieke/traingenerator/raw/main/docs/assets/social-preview-tiny.png">
 <meta property="og:url" content="https://traingenerator.jrieke.com/">
 <meta name="twitter:card" content="summary_large_image">
-
-<!--  Non-Essential, But Recommended -->
 <meta property="og:site_name" content="Traingenerator">
 <meta name="twitter:image:alt" content="Traingenerator Preview">
 """
