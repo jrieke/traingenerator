@@ -13,6 +13,9 @@
 {% endif %}
 
 
+{% if visualization_tool == "Aim" %}
+from aim import Session
+{% endif %}
 {% if visualization_tool == "comet.ml" %}
 from comet_ml import Experiment  # has to be 1st import
 {% endif %}
@@ -89,6 +92,9 @@ experiment_id = datetime.now().strftime('%Y-%m-%d_%H-%M-%S')
 {% endif %}
 {% if visualization_tool == "Tensorboard" %}
 writer = SummaryWriter(logdir=f"logs/{experiment_id}")
+{% elif visualization_tool == "Aim" %}
+aim_session = Session({% if aim_experiment %}experiment="{{ aim_experiment }}"{% endif %})
+aim_session.set_params({"lr": lr, "batch_size": batch_size, "num_epochs": num_epochs}, name="hparams")
 {% elif visualization_tool == "comet.ml" %}
 experiment = Experiment("{{ comet_api_key }}"{% if comet_project %}, project_name="{{ comet_project }}"{% endif %})
 {% endif %}
@@ -220,6 +226,9 @@ def log_epoch(trainer):
         {% if visualization_tool == "Tensorboard" %}
         writer.add_scalar(f"{name}_loss", metrics["loss"], epoch)
         writer.add_scalar(f"{name}_accuracy", metrics["accuracy"], epoch)
+        {% elif visualization_tool == "Aim" %}
+        aim_session.track(metrics["loss"], name="loss", subset=name, epoch=epoch)
+        aim_session.track(metrics["accuracy"], name="accuracy", subset=name, epoch=epoch)
         {% elif visualization_tool == "comet.ml" %}
         experiment.log_metric(f"{name}_loss", metrics["loss"])
         experiment.log_metric(f"{name}_accuracy", metrics["accuracy"])
