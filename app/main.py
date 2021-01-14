@@ -21,7 +21,7 @@ MAGE_EMOJI_URL = "https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thu
 
 # Set page title and favicon.
 st.set_page_config(
-    page_title="Code Generator for Machine Learning", page_icon=MAGE_EMOJI_URL,
+    page_title="Traingenerator", page_icon=MAGE_EMOJI_URL,
 )
 
 
