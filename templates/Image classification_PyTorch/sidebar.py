@@ -63,6 +63,10 @@ def show():
                 unsafe_allow_html=True,
             )
 
+        # Number of dense units in the final layer
+        st.write("## Classes")
+        inputs["num_classes"] = st.number_input("Num Classes", 1, None, 1000)
+
         st.write("## Input data")
         inputs["data_format"] = st.selectbox(
             "What best describes your input data?", ("Numpy arrays", "Image files")
