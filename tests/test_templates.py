@@ -14,12 +14,13 @@ from jinja2 import Environment, FileSystemLoader
 import pytest
 import tempfile
 import runpy
+import shutil
 
 
 def run_in_tmp_dir(code):
     """Executes code in temporary working directory."""
+    cwd = os.getcwd()
     with tempfile.TemporaryDirectory() as tmp_dir:
-        cwd = os.getcwd()
         os.chdir(tmp_dir)
 
         # Use runpy instead of exec here because a) it doesn't interfere with
