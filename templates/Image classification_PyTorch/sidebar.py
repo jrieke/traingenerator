@@ -56,16 +56,24 @@ def show():
         else:  # only one variant
             inputs["model_func"] = MODELS[model]
 
+        inputs["num_classes"] = st.number_input(
+            "How many classes/output units?", 1, None, 1000,
+        )
+        st.markdown(
+            "<sup>Default: 1000 classes for training on ImageNet</sup>",
+            unsafe_allow_html=True,
+        )
+
         inputs["pretrained"] = st.checkbox("Use pre-trained model")
         if inputs["pretrained"]:
+            if inputs["num_classes"] != 1000:
+                classes_note = "<br><b>Note: Final layer will not be trained if using more/less than 1000 classes!</b>"
+            else:
+                classes_note = ""
             st.markdown(
-                '<sup>Pre-training on ImageNet with 1k classes, <a href="https://pytorch.org/docs/stable/torchvision/models.html">details</a></sup>',
+                f'<sup>Pre-training on ImageNet, <a href="https://pytorch.org/docs/stable/torchvision/models.html">details</a>{classes_note}</sup>',
                 unsafe_allow_html=True,
             )
-
-        # Number of dense units in the final layer
-        st.write("## Classes")
-        inputs["num_classes"] = st.number_input("Num Classes", 1, None, 1000)
 
         st.write("## Input data")
         inputs["data_format"] = st.selectbox(
@@ -140,7 +148,7 @@ def show():
         if inputs["visualization_tool"] == "Aim":
             inputs["aim_experiment"] = st.text_input("Experiment name (optional)")
             st.markdown(
-                "<sup>View by running: `aim up`</br>See full documentation <a href=\"https://github.com/aimhubio/aim#contents\" target=\"_blank\">here</a></sup>",
+                '<sup>View by running: `aim up`</br>See full documentation <a href="https://github.com/aimhubio/aim#contents" target="_blank">here</a></sup>',
                 unsafe_allow_html=True,
             )
         elif inputs["visualization_tool"] == "comet.ml":
