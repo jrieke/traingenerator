@@ -13,9 +13,6 @@
 {% endif %}
 
 
-{% if visualization_tool == "Aim" %}
-from aim import Session
-{% endif %}
 {% if visualization_tool == "comet.ml" %}
 from comet_ml import Experiment  # has to be 1st import
 {% endif %}
@@ -35,6 +32,8 @@ from datetime import datetime
 {% endif %}
 {% if visualization_tool == "Tensorboard" %}
 from tensorboardX import SummaryWriter
+{% elif visualization_tool == "Aim" %}
+from aim import Session
 {% endif %}
 {% if checkpoint %}
 from pathlib import Path
