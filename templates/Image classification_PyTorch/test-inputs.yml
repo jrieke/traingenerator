@@ -13,10 +13,12 @@ visualization_tool:
   - Tensorboard
   - Aim
   # TODO: Find a way to add comet.ml here, without requiring API key.
+num_classes:
+  - 1000
+  - 10
 pretrained: False
 loss: CrossEntropyLoss
 optimizer: Adam
-num_classes: 10
 lr: 0.001
 batch_size: 128
 num_epochs: 1
