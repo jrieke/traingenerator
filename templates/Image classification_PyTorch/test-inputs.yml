@@ -1,10 +1,14 @@
-model_func: resnet18
+model_func: 
+  - resnet18
+  # - alexnet
+  # - densenet121
+  # - vgg11
 data_format:
   - Numpy arrays
   - Image files
 gpu:
   - True
-  - False
+  # - False
 checkpoint:
   - True
   - False
