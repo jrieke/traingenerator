@@ -14,7 +14,12 @@ MODELS = {
         "ResNet 101": "resnet101",
         "ResNet 152": "resnet152",
     },
-    "DenseNet": "densenet",
+    "DenseNet": {
+        "DenseNet-121": "densenet121",
+        "DenseNet-161": "densenet161",
+        "DenseNet-169": "densenet169",
+        "DenseNet-201": "densenet201",
+    },
     "VGG": {
         "VGG11": "vgg11",
         "VGG11 with batch normalization": "vgg11_bn",
