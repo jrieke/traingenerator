@@ -11,6 +11,8 @@ checkpoint:
 visualization_tool:
   - Not at all
   - Tensorboard
+  - Aim
+  # TODO: Find a way to add comet.ml here, without requiring API key.
 pretrained: False
 loss: CrossEntropyLoss
 optimizer: Adam
