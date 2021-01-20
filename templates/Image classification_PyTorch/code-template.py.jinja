@@ -122,12 +122,12 @@ def load_data(train):
         transforms.Resize(256), 
         transforms.CenterCrop(224), 
         transforms.ToTensor(), 
-        {% if dataset == "MNIST" %}
+        {% if dataset == "MNIST" or dataset == "FashionMNIST"%}
         transforms.Lambda(lambda x: x.repeat(3, 1, 1)),  # grayscale to RGB
         {% endif %}
     ])
-    {% if dataset == "MNIST" %}
-    dataset = datasets.MNIST("./data", train=train, download=True, transform=transform)
+    {% if dataset == "MNIST" or dataset == "FashionMNIST"%}
+    dataset = datasets.{{ dataset }}("./data", train=train, download=True, transform=transform)
     {% endif %}
 
     # Wrap in data loader.
