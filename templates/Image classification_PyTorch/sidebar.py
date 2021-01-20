@@ -82,7 +82,8 @@ def show():
 
         st.write("## Input data")
         inputs["data_format"] = st.selectbox(
-            "What best describes your input data?", ("Numpy arrays", "Image files")
+            "Which data do you want to use?",
+            ("Public dataset", "Numpy arrays", "Image files"),
         )
         if inputs["data_format"] == "Numpy arrays":
             st.write(
@@ -109,6 +110,8 @@ def show():
             See also [this example dir](https://github.com/jrieke/traingenerator/tree/main/data/image-data)
             """
             )
+        elif inputs["data_format"] == "Public dataset":
+            inputs["dataset"] = st.selectbox("Which one?", ("MNIST",))
 
         st.write("## Preprocessing")
         # st.checkbox("Convert to grayscale")

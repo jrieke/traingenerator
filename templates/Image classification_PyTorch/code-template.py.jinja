@@ -78,6 +78,8 @@ test_data = None          # optional
 train_data = "data/image-data"  # required
 val_data = "data/image-data"    # optional
 test_data = None                # optional
+{% elif data_format == "Public dataset"%}
+# Dataset {{ dataset }} will be loaded further down.
 {% endif %}
 
 # Set up hyperparameters.
@@ -112,6 +114,34 @@ use_cuda = False
 device = torch.device("cuda" if use_cuda else "cpu")
 
 
+{% if data_format == "Public dataset" %}
+{{ header("Dataset & Preprocessing") }}
+def load_data(train):
+    # Download and transform dataset.
+    transform = transforms.Compose([
+        transforms.Resize(256), 
+        transforms.CenterCrop(224), 
+        transforms.ToTensor(), 
+        {% if dataset == "MNIST" %}
+        transforms.Lambda(lambda x: x.repeat(3, 1, 1)),  # grayscale to RGB
+        {% endif %}
+    ])
+    {% if dataset == "MNIST" %}
+    dataset = datasets.MNIST("./data", train=train, download=True, transform=transform)
+    {% endif %}
+
+    # Wrap in data loader.
+    if use_cuda:
+        kwargs = {"pin_memory": True, "num_workers": 1}
+    else:
+        kwargs = {}
+    loader = DataLoader(dataset, batch_size=batch_size, shuffle=train, **kwargs)
+    return loader
+
+train_loader = load_data(train=True)
+val_loader = None
+test_loader = load_data(train=False)
+{% else %}
 {{ header("Preprocessing") }}
 def preprocess(data, name):
     if data is None:  # val/test can be empty
@@ -123,6 +153,7 @@ def preprocess(data, name):
         transforms.Resize(256), 
         transforms.CenterCrop(224), 
         transforms.ToTensor(), 
+        {# TODO: Maybe add normalization option even if model is not pretrained #}
         {% if pretrained %}
         transforms.Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225])
         {% endif %}
@@ -177,6 +208,7 @@ def preprocess(data, name):
 train_loader = preprocess(train_data, "train")
 val_loader = preprocess(val_data, "val")
 test_loader = preprocess(test_data, "test")
+{% endif %}
 
 
 {{ header("Model") }}

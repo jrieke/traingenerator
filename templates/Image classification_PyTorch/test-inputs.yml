@@ -6,6 +6,8 @@ model_func:
 data_format:
   - Numpy arrays
   - Image files
+# TODO: Find a way to test public dataset here, but would need some form of dry run,
+#   otherwise it takes forever.
 gpu:
   - False
   - True
