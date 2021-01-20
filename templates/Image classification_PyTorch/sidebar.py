@@ -153,7 +153,8 @@ def show():
 
         st.write("## Visualizations")
         inputs["visualization_tool"] = st.selectbox(
-            "How to log metrics?", ("Not at all", "Tensorboard", "Aim", "comet.ml")
+            "How to log metrics?",
+            ("Not at all", "Tensorboard", "Aim", "Weights & Biases", "comet.ml"),
         )
         if inputs["visualization_tool"] == "Aim":
             inputs["aim_experiment"] = st.text_input("Experiment name (optional)")
@@ -161,6 +162,9 @@ def show():
                 '<sup>View by running: `aim up`</br>See full documentation <a href="https://github.com/aimhubio/aim#contents" target="_blank">here</a></sup>',
                 unsafe_allow_html=True,
             )
+        elif inputs["visualization_tool"] == "Weights & Biases":
+            inputs["wb_project"] = st.text_input("W&B project name (optional)")
+            inputs["wb_name"] = st.text_input("W&B experiment name (optional)")
         elif inputs["visualization_tool"] == "comet.ml":
             # TODO: Add a tracker how many people click on this link.
             "[Sign up for comet.ml](https://www.comet.ml/) :comet: "
