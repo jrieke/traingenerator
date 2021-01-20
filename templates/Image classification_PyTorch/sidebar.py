@@ -111,7 +111,9 @@ def show():
             """
             )
         elif inputs["data_format"] == "Public dataset":
-            inputs["dataset"] = st.selectbox("Which one?", ("MNIST", "FashionMNIST"))
+            inputs["dataset"] = st.selectbox(
+                "Which one?", ("MNIST", "FashionMNIST", "CIFAR10")
+            )
 
         st.write("## Preprocessing")
         # st.checkbox("Convert to grayscale")
