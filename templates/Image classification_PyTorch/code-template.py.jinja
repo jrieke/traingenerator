@@ -332,3 +332,6 @@ def checkpoint_model(trainer):
 {% endif %}
 # Start training.
 trainer.run(train_loader, max_epochs=num_epochs)
+{% if visualization_tool == "Weights & Biases" %}
+wandb.finish()
+{% endif %}
