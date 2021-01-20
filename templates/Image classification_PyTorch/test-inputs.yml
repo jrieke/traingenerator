@@ -1,26 +1,28 @@
 model_func: 
   - resnet18
-  # - alexnet
-  # - densenet121
-  # - vgg11
+  - alexnet
+  - densenet121
+  - vgg11
 data_format:
   - Numpy arrays
   - Image files
 gpu:
-  - True
-  # - False
-checkpoint:
-  - True
   - False
+  - True
+checkpoint:
+  - False
+  - True
 visualization_tool:
   - Not at all
   - Tensorboard
   - Aim
   # TODO: Find a way to add comet.ml here, without requiring API key.
 num_classes:
-  - 1000
   - 10
-pretrained: False
+  - 1000
+pretrained: 
+  - False
+  - True
 loss: CrossEntropyLoss
 optimizer: Adam
 lr: 0.001
