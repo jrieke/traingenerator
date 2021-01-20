@@ -5,7 +5,19 @@
 {%- else %}
 #
 {%- endif %}
- pip install numpy torch torchvision pytorch-ignite{% if visualization_tool == "Tensorboard" %} tensorboardX tensorboard{% endif %}{% if visualization_tool == "comet.ml" %} comet_ml{% endif %}{% if visualization_tool == "Aim" %} aim{% endif %}
+ pip install numpy torch torchvision pytorch-ignite{% if visualization_tool == "Tensorboard" %} tensorboardX tensorboard{% endif %}{% if visualization_tool == "Weights & Biases" %} wandb{% endif %}{% if visualization_tool == "comet.ml" %} comet_ml{% endif %}{% if visualization_tool == "Aim" %} aim{% endif %}
+{% if visualization_tool == "Weights & Biases" %}
+
+
+# Also, you need to login to Weights & Biases on the terminal:
+{% if notebook %}
+
+!
+{%- else %}
+#
+{%- endif %}
+ wandb login
+{%- endif %}
 {% if notebook %}
 
 
@@ -34,6 +46,8 @@ from datetime import datetime
 from tensorboardX import SummaryWriter
 {% elif visualization_tool == "Aim" %}
 from aim import Session
+{% elif visualization_tool == "Weights & Biases" %}
+import wandb
 {% endif %}
 {% if checkpoint %}
 from pathlib import Path
@@ -85,7 +99,7 @@ test_data = None                # optional
 # Set up hyperparameters.
 lr = {{ lr }}
 batch_size = {{ batch_size }}
-num_epochs = {{ num_epochs}}
+num_epochs = {{ num_epochs }}
 
 # Set up logging.
 {% if visualization_tool == "Tensorboard" or checkpoint %}
@@ -96,6 +110,16 @@ writer = SummaryWriter(logdir=f"logs/{experiment_id}")
 {% elif visualization_tool == "Aim" %}
 aim_session = Session({% if aim_experiment %}experiment="{{ aim_experiment }}"{% endif %})
 aim_session.set_params({"lr": lr, "batch_size": batch_size, "num_epochs": num_epochs}, name="hparams")
+{% elif visualization_tool == "Weights & Biases" %}
+wandb.init(
+{% if wb_project %}
+    project="{{ wb_project }}", 
+{% endif %}
+{% if wb_name %}
+    name="{{ wb_name }}", 
+{% endif %}
+    config={"lr": lr, "batch_size": batch_size, "num_epochs": num_epochs}
+)
 {% elif visualization_tool == "comet.ml" %}
 experiment = Experiment("{{ comet_api_key }}"{% if comet_project %}, project_name="{{ comet_project }}"{% endif %})
 {% endif %}
@@ -227,6 +251,11 @@ model = model.to(device)
 loss_func = nn.{{ loss }}()
 optimizer = optim.{{ optimizer }}(model.parameters(), lr=lr)
 
+{% if visualization_tool == "Weights & Biases" %}
+# Log gradients and model parameters to W&B.
+wandb.watch(model)
+
+{% endif %}
 
 {{ header("Training") }}
 # Set up pytorch-ignite trainer and evaluator.
@@ -269,6 +298,8 @@ def log_epoch(trainer):
         {% elif visualization_tool == "Aim" %}
         aim_session.track(metrics["loss"], name="loss", subset=name, epoch=epoch)
         aim_session.track(metrics["accuracy"], name="accuracy", subset=name, epoch=epoch)
+        {% elif visualization_tool == "Weights & Biases" %}
+        wandb.log({f"{name}_loss": metrics["loss"], f"{name}_accuracy": metrics["accuracy"]})
         {% elif visualization_tool == "comet.ml" %}
         experiment.log_metric(f"{name}_loss", metrics["loss"])
         experiment.log_metric(f"{name}_accuracy", metrics["accuracy"])
