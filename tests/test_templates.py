@@ -15,6 +15,7 @@ import pytest
 import tempfile
 import runpy
 import shutil
+import copy
 
 
 def run_in_tmp_dir(code):
@@ -55,7 +56,7 @@ def test_all_templates(subtests, pytestconfig):
     # - doesn't produce intermediate output while running the tests
     # - runs the code via exec which doesn't give good errors
 
-    # Find available templates (based on --template option).
+    # Find available templates (if --template is set, use only that one).
     template_option = pytestconfig.getoption("template")
     if template_option is None:
         # Default: Use all templates except for "example" and ones that don't contain
@@ -76,9 +77,6 @@ def test_all_templates(subtests, pytestconfig):
                 f"{template_option}"
             )
 
-    # print(template_dirs)
-    # assert False
-
     for template_dir in template_dirs:
         # Load template from "code-template.py.jinja".
         env = Environment(
@@ -92,22 +90,31 @@ def test_all_templates(subtests, pytestconfig):
         with open(os.path.join(template_dir.path, "test-inputs.yml"), "r") as f:
             input_dict = yaml.safe_load(f)
 
-        # Compute all possible combinations of test inputs.
+        # Compute different combinations of test inputs.
         if input_dict:
-            keys, values = zip(*input_dict.items())
-            # Wrap single elements in list.
-            values = [v if isinstance(v, list) else [v] for v in values]
-            # print(values)
-            # print(itertools.product(*values))
-            input_combinations = [
-                dict(zip(keys, v)) for v in itertools.product(*values)
-            ]
-            # print(input_combinations)
+            # Choose first option for each input value as default one.
+            default_input = {
+                key: values[0] if isinstance(values, list) else values
+                for key, values in input_dict.items()
+            }
+            input_combinations = [default_input]
+
+            # If there are multiple options for an input value, iterate through them, 
+            # test all of them consecutively. Note: This doesn't test all possible 
+            # combinations but just changes one input value at a time (otherwise it 
+            # takes forever).
+            for key, values in input_dict.items():
+                if isinstance(values, list) and len(values) > 1:
+                    for value in values[1:]:
+                        modified_input = copy.deepcopy(default_input)
+                        modified_input[key] = value
+                        input_combinations.append(modified_input)
+
         else:  # no input values defined
             input_combinations = [{}]
 
         # Generate and execute code (in tmp dir, so logs are not stored here).
-        # TODO: Use parametrize instead of for loop here.
+        # TODO: If somehow possible, use parametrize instead of for loop here.
         for inputs in input_combinations:
             inputs_str = ",".join(f"{k}={v}" for k, v in inputs.items())
             with subtests.test(msg=template_dir.name + "---" + inputs_str):
