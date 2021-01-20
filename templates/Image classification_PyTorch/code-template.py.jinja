@@ -12,12 +12,11 @@
 # Also, you need to login to Weights & Biases on the terminal:
 {% if notebook %}
 
-!
-{%- else %}
-#
-{%- endif %}
- wandb login
-{%- endif %}
+! wandb login
+{% else %}
+# wandb login
+{% endif %}
+{% endif %}
 {% if notebook %}
 
 
