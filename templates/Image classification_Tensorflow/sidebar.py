@@ -6,24 +6,19 @@ import streamlit as st
 # option 1: model -> code
 # option 2 – if model has multiple variants: model -> model variant -> code
 MODELS = {
-    "AlexNet": "alexnet",  # single model variant
+    #TODO: Add more models
+    "Xception": "Xception", # single model variant
     "ResNet": {  # multiple model variants
-        "ResNet 18": "resnet18",
-        "ResNet 34": "resnet34",
-        "ResNet 50": "resnet50",
-        "ResNet 101": "resnet101",
-        "ResNet 152": "resnet152",
+        "ResNet 50": "ResNet50",
+        "ResNet 101": "ResNet101",
+        "ResNet 152": "ResNet152",
+        "ResNet 50v2": "ResNet50V2",
+        "ResNet 101v2": "ResNet101V2",
+        "ResNet 152v2": "ResNet152V2",
     },
-    "DenseNet": "densenet",
     "VGG": {
-        "VGG11": "vgg11",
-        "VGG11 with batch normalization": "vgg11_bn",
-        "VGG13": "vgg13",
-        "VGG13 with batch normalization": "vgg13_bn",
-        "VGG16": "vgg16",
-        "VGG16 with batch normalization": "vgg16_bn",
+        "VGG16": "VGG16",
         "VGG19": "vgg19",
-        "VGG19 with batch normalization": "vgg19_bn",
     },
 }
 
