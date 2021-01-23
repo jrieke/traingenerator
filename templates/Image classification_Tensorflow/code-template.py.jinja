@@ -18,6 +18,7 @@ import tensorflow as tf
 from tensorflow import keras
 from tensorflow.keras.preprocessing import image_dataset_from_directory
 from tensorflow.keras.preprocessing.image import img_to_array, array_to_img
+from tensorflow.keras.layers import GlobalAveragePooling2D
 {% if data_format == "Image files" %}
 import urllib
 import zipfile
@@ -136,26 +137,48 @@ val_loader = preprocess(val_data, "val")
 test_loader = preprocess(test_data, "test")
 
 {{ header("data augmentation") }}
-
 data_augmentation = tf.keras.Sequential([
   tf.keras.layers.experimental.preprocessing.RandomFlip('horizontal'),
   tf.keras.layers.experimental.preprocessing.RandomRotation(0.2),
 ])
 
 {{ header("Model") }}
-
 # Create the base model
 base_model = tf.keras.applications.{{model_func}}(input_shape=img_shape,
-                                               include_top=True,
-                                               weights='imagenet')
+                                               {% if num_classes != 1000 %}
+                                               include_top = False,
+                                               {% else %}
+                                               include_top = True,
+                                               {% endif %}
+                                               {% if pretrained %}
+                                               weights="{{ pretrained }},"
+                                               {% else %}
+                                               weights = None,
+                                               {% endif %}
+                                               )
+
 
 
 # using the Keras Functional API
+{% if num_classes != 1000 %}
+global_average_layer = tf.keras.layers.GlobalAveragePooling2D()
+prediction_layer = tf.keras.layers.Dense({{num_classes}})
 
 inputs = tf.keras.Input(shape=img_shape)
 x = data_augmentation(inputs)
-x = tf.keras.applications.{{model_func}}.preprocess_input(x)
-model = base_model(x)
+x = tf.keras.applications.{{model_pre}}.preprocess_input(x)
+x = base_model(x)
+x = global_average_layer(x)
+outputs = prediction_layer(x)
+model = tf.keras.Model(inputs, outputs)
+
+{% else %}
+inputs = tf.keras.Input(shape=img_shape)
+x = data_augmentation(inputs)
+x = tf.keras.applications.{{model_pre}}.preprocess_input(x)
+outputs = base_model(x)
+model = tf.keras.Model(inputs, outputs)
+{% endif %}
 
 model.compile(optimizer = tf.keras.optimizers.{{ optimizer }}(lr={{lr}}),
               loss = "{{ loss }}",

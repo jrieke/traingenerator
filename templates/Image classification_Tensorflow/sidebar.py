@@ -16,7 +16,7 @@ MODELS = {
         "ResNet 101v2": "ResNet101V2",
         "ResNet 152v2": "ResNet152V2",
     },
-    "VGG": {
+    "vgg": {
         "VGG16": "VGG16",
         "VGG19": "vgg19",
     },
@@ -48,13 +48,28 @@ def show():
         if isinstance(MODELS[model], dict):  # different model variants
             model_variant = st.selectbox("Which variant?", list(MODELS[model].keys()))
             inputs["model_func"] = MODELS[model][model_variant]
+            inputs["model_pre"]  = model.lower() # Model Preprocessing
         else:  # only one variant
             inputs["model_func"] = MODELS[model]
+            inputs["model_pre"]  = model.lower()
+        
+        inputs["num_classes"] = st.number_input(
+            "How many classes/output units?", 1, None, 1000,
+        )
+        st.markdown(
+            "<sup>Default: 1000 classes for training on ImageNet</sup>",
+            unsafe_allow_html=True,
+        )
 
         inputs["pretrained"] = st.checkbox("Use pre-trained model")
         if inputs["pretrained"]:
+            inputs["pretrained"] = "imagenet"
+            if inputs["num_classes"] != 1000:
+                classes_note = "<br><b>Note: Final layer will not be trained if using more/less than 1000 classes!</b>"
+            else:
+                classes_note = ""
             st.markdown(
-                '<sup>Pre-training on ImageNet with 1k classes, <a href="https://www.tensorflow.org/api_docs/python/tf/keras/applications">details</a></sup>',
+                f'<sup>Pre-training on ImageNet with 1k classes, <a href="https://www.tensorflow.org/api_docs/python/tf/keras/applications">details</a>{classes_note}</sup>',
                 unsafe_allow_html=True,
             )
 
