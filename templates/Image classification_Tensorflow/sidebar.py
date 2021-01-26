@@ -6,22 +6,51 @@ import streamlit as st
 # option 1: model -> code
 # option 2 – if model has multiple variants: model -> model variant -> code
 MODELS = {
-    #TODO: Add more models
-    "Xception": "Xception", # single model variant
     "ResNet": {  # multiple model variants
         "ResNet 50": "ResNet50",
         "ResNet 101": "ResNet101",
         "ResNet 152": "ResNet152",
+    }, 
+    "ResNet_V2": {
         "ResNet 50v2": "ResNet50V2",
         "ResNet 101v2": "ResNet101V2",
         "ResNet 152v2": "ResNet152V2",
     },
-    "vgg": {
-        "VGG16": "VGG16",
-        "VGG19": "vgg19",
+    "Xception": "Xception",  # single model variant
+    "DenseNet": {
+        "DenseNet 121": "DenseNet121",
+        "DenseNet 169": "DenseNet169",
+        "DenseNet 201": "DenseNet201",
+    },
+    "EfficientNet": {
+        "EfficientNet B0": "EfficientNetB0",
+        "EfficientNet B1": "EfficientNetB1",
+        "EfficientNet B2": "EfficientNetB2",
+        "EfficientNet B3": "EfficientNetB3",
+        "EfficientNet B4": "EfficientNetB4",
+        "EfficientNet B5": "EfficientNetB5",
+        "EfficientNet B6": "EfficientNetB6",
+        "EfficientNet B7": "EfficientNetB7",
+    },
+    
+    "Inception_ResNet_V2": "InceptionResNetV2",
+    "Inception_V3": "InceptionV3",
+    
+    "VGG16": "VGG16",
+    "VGG19": "vgg19",
+    
+    "MobileNet": "MobileNet",
+    "MobileNet_V2": "MobileNetV2",
+
+    "MobileNet_V3": {
+        "MobileNet V3Large": "MobileNetV3Large",
+        "MobileNet V3Small": "MobileNetV3Small",
+    },
+    "NASNet": {
+        "NASNet Large": "NASNetLarge",
+        "NASNet Mobile": "NASNetMobile",
     },
 }
-
 
 # Define possible optimizers in a dict.
 # Format: optimizer -> default learning rate
@@ -48,13 +77,16 @@ def show():
         if isinstance(MODELS[model], dict):  # different model variants
             model_variant = st.selectbox("Which variant?", list(MODELS[model].keys()))
             inputs["model_func"] = MODELS[model][model_variant]
-            inputs["model_pre"]  = model.lower() # Model Preprocessing
+            inputs["model_pre"] = model.lower()  # Model Preprocessing
         else:  # only one variant
             inputs["model_func"] = MODELS[model]
-            inputs["model_pre"]  = model.lower()
-        
+            inputs["model_pre"] = model.lower()
+
         inputs["num_classes"] = st.number_input(
-            "How many classes/output units?", 1, None, 1000,
+            "How many classes/output units?",
+            1,
+            None,
+            1000,
         )
         st.markdown(
             "<sup>Default: 1000 classes for training on ImageNet</sup>",
@@ -75,7 +107,8 @@ def show():
 
         st.write("## Input data")
         inputs["data_format"] = st.selectbox(
-            "What best describes your input data?", ("Numpy arrays", "Image files")
+            "Which data do you want to use?",
+            ("Public dataset", "Numpy arrays", "Image files"),
         )
         if inputs["data_format"] == "Numpy arrays":
             st.write(
@@ -102,23 +135,13 @@ def show():
             See also [this example dir](https://github.com/jrieke/traingenerator/tree/main/data/image-data)
             """
             )
-
-        st.write("## Preprocessing")
-        # st.checkbox("Convert to grayscale")
-        # st.checkbox("Convert to RGB", True)
-        # TODO: Maybe show disabled checkbox here to make it more aligned with the
-        #   display above.
-        # st.markdown(
-        #     '<label data-baseweb="checkbox" class="st-eb st-b4 st-ec st-d4 st-ed st-at st-as st-ee st-e5 st-av st-aw st-ay st-ax"><span role="checkbox" aria-checked="true" class="st-eg st-b2 st-bo st-eh st-ei st-ej st-ek st-el st-bb st-bj st-bk st-bl st-bm st-em st-en st-eo st-ep st-eq st-er st-es st-et st-av st-aw st-ax st-ay st-eu st-cb st-ev st-ew st-ex st-ey st-ez st-f0 st-f1 st-f2 st-c5 st-f3 st-f4 st-f5" style="background-color: rgb(150, 150, 150);"></span><input aria-checked="true" type="checkbox" class="st-b0 st-an st-cv st-bd st-di st-f6 st-cr" value=""><div class="st-ev st-f7 st-bp st-ae st-af st-ag st-f8 st-ai st-aj">sdf</div></label>',
-        #     unsafe_allow_html=True,
-        # )
-        st.write("Resize images to 256 (required for this model)")
-        st.write("Center-crop images to 224 (required for this model)")
-        if inputs["pretrained"]:
-            st.write("Scale mean and std for pre-trained model")
+        elif inputs["data_format"] == "Public dataset":
+            inputs["dataset"] = st.selectbox(
+                "Which one?", ("mnist", "fashion_mnist", "cifar10")
+            )
 
         st.write("## Training")
-        #inputs["gpu"] = st.checkbox("Use GPU if available", True)
+        # inputs["gpu"] = st.checkbox("Use GPU if available", True)
         inputs["checkpoint"] = st.checkbox("Save model checkpoint each epoch")
         if inputs["checkpoint"]:
             st.markdown(
@@ -133,22 +156,14 @@ def show():
         inputs["lr"] = st.number_input(
             "Learning rate", 0.000, None, default_lr, format="%f"
         )
-        inputs["batch_size"] = st.number_input("Batch size", 1, None, 128) 
+        inputs["batch_size"] = st.number_input("Batch size", 1, None, 128)
         inputs["num_epochs"] = st.number_input("Epochs", 1, None, 3)
-        inputs["print_every"] = st.number_input(
-            "Print progress every ... batches", 1, None, 1
-        )
 
         st.write("## Visualizations")
         inputs["visualization_tool"] = st.selectbox(
-            "How to log metrics?", ("Not at all", "Tensorboard", "comet.ml")
+            "How to log metrics?", ("Not at all", "Tensorboard")
         )
-        if inputs["visualization_tool"] == "comet.ml":
-            # TODO: Add a tracker how many people click on this link.
-            "[Sign up for comet.ml](https://www.comet.ml/) :comet: "
-            inputs["comet_api_key"] = st.text_input("Comet API key (required)")
-            inputs["comet_project"] = st.text_input("Comet project name (optional)")
-        elif inputs["visualization_tool"] == "Tensorboard":
+        if inputs["visualization_tool"] == "Tensorboard":
             st.markdown(
                 "<sup>Logs are saved to timestamped dir in `./logs`. View by running: `tensorboard --logdir=./logs`</sup>",
                 unsafe_allow_html=True,

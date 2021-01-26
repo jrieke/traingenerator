@@ -5,29 +5,25 @@
 {%- else %}
 #
 {%- endif %}
- pip install numpy tensorflow{% if visualization_tool == "comet.ml" %} comet_ml{% endif %}
-
-{% if notebook %}
-
-
-# ---
-{% endif %}
+ pip install numpy tensorflow
 
 import numpy as np
 import tensorflow as tf
 from tensorflow import keras
+{% if data_format == "Image files" or "Numpy arrays"%}
 from tensorflow.keras.preprocessing import image_dataset_from_directory
 from tensorflow.keras.preprocessing.image import img_to_array, array_to_img
+{% endif %}
 from tensorflow.keras.layers import GlobalAveragePooling2D
 {% if data_format == "Image files" %}
 import urllib
 import zipfile
 {% endif %}
+{% if data_format == "Public dataset" %}
+from sklearn.model_selection import train_test_split
+{% endif %}
 {% if visualization_tool == "Tensorboard" or checkpoint %}
 from datetime import datetime
-{% endif %}
-{% if checkpoint %}
-from pathlib import Path
 {% endif %}
 
 {% if data_format == "Numpy arrays" %}
@@ -37,14 +33,12 @@ def fake_data():
 
 {% elif data_format == "Image files" %}
 
-
 # COMMENT THIS OUT IF YOU USE YOUR OWN DATA.
 # Download example data into ./data/image-data (4 image files, 2 for "dog", 2 for "cat").
 url = "https://github.com/jrieke/traingenerator/raw/main/data/fake-image-data.zip"
 zip_path, _ = urllib.request.urlretrieve(url)
 with zipfile.ZipFile(zip_path, "r") as f:
     f.extractall("data")
-
 {% endif %}
 
 {{ header("Setup") }}
@@ -55,7 +49,7 @@ with zipfile.ZipFile(zip_path, "r") as f:
 # - labels has array shape (num samples, )
 train_data = fake_data()  # required
 val_data = fake_data()    # optional
-test_data = None          # optional
+test_data = fake_data()   # optional
 {% elif data_format == "Image files" %}
 # INSERT YOUR DATA HERE
 # Expected format: One folder per class, e.g.
@@ -69,44 +63,91 @@ test_data = None          # optional
 #
 # Example: https://github.com/jrieke/traingenerator/tree/main/data/image-data
 train_data = "data/image-data"  # required
-val_data = "data/image-data"    # optional
-test_data = None                # optional
+val_data  =  "data/image-data"    # optional
+test_data =  "data/image-data"   # optional
 {% endif %}
-
 # Set up hyperparameters.
 lr = {{ lr }}
 batch_size = {{ batch_size }}
 num_epochs = {{ num_epochs}}
 
-{# TODO Add Image_Size #}
-img_size = (160,160)
+{% if data_format == "Public dataset" %}
+img_size = (48,48)
 img_shape = img_size + (3,)
-
-# Set up logging.
+{% else %}
+img_size = (256,256)
+img_shape = img_size + (3,)
+{%endif%}
 
 {% if visualization_tool == "Tensorboard" or checkpoint %}
+# Set up logging.
 experiment_id = datetime.now().strftime('%Y-%m-%d_%H-%M-%S')
 {% endif %}
 {% if visualization_tool == "Tensorboard" %}
-tensorboard_callback = tf.keras.callbacks.TensorBoard(log_dir=experiment_id, histogram_freq=1)
-{% endif %}
-{% if visualization_tool == "comet.ml" %}
-experiment = Experiment("{{ comet_api_key }}"{% if comet_project %}, project_name="{{ comet_project }}"{% endif %})
+tensorboard_callback = tf.keras.callbacks.TensorBoard(log_dir = f'logs/{experiment_id}', histogram_freq=1)
 {% endif %}
 {% if checkpoint %}
-checkpoint_dir = tf.keras.callbacks.ModelCheckpoint(filepath='checkpoints/{experiment_id}/model.{epoch:02d}-{val_loss:.2f}.h5')
+checkpoint_dir = tf.keras.callbacks.ModelCheckpoint(filepath = f'checkpoints/{experiment_id}')
 {% endif %}
-print_every = {{ print_every }}  # batches
 
+{% if data_format == "Public dataset" %}
+{{ header("Dataset & Preprocessing") }}
+def load_data(train):
+    # Download and transform dataset.
+    data = tf.keras.datasets.{{ dataset }}
+    (x_train, y_train), (x_test, y_test) = data.load_data()
+
+    if train == True:
+        images,labels = x_train ,y_train
+    elif train == False:
+        images,labels = x_test ,y_test
+    {% if dataset == "mnist" or dataset == "fashion_mnist"%}
+    # Convert the images into 3 channels
+    images = np.dstack([images] * 3)
+
+    # Reshape images as per the tensor format required by tensorflow
+    images = images.reshape(-1, 28,28,3)
+    {% endif %}
+
+    {% if dataset == "cifar10" %}
+    # Reshape images as per the tensor format required by tensorflow
+    images = images.reshape(-1, 32,32,3)
+    {% endif %}
+
+    images = np.asarray([img_to_array(array_to_img(im, scale=False).resize(img_size)) for im in images])
+    
+    # Normalise the data and change data type
+    images = images/ 255.
+
+    if train == True:
+        #Split data into training & validation set.
+        train_images,val_images,train_labels,val_labels = train_test_split(images,
+                                                               labels,
+                                                               test_size=0.2,
+                                                               random_state=42
+                                                           )
+        train_dataset = tf.data.Dataset.from_tensor_slices((train_images, train_labels)).batch(128)
+        val_dataset = tf.data.Dataset.from_tensor_slices((val_images, val_labels)).batch(128)
+
+        dataset = train_dataset, val_dataset
+
+    elif train == False:
+        dataset = tf.data.Dataset.from_tensor_slices((images, labels)).batch(128)
+
+    return dataset
+
+train_dataset, val_dataset = load_data(train=True)
+test_dataset = load_data(train=False)
+{% else %}
 {{ header("Preprocessing") }}
-def preprocess(data, name):
+def preprocess(data):
     if data is None:  # val/test can be empty
         return None
         
     {% if data_format == "Image files" %}
     # Read image files to tensorflow dataset.
     dataset = image_dataset_from_directory(data,
-                                           shuffle=(name=="train"),
+                                           batch_size = {{batch_size}},
                                            image_size=img_size)
                                           
 
@@ -123,71 +164,70 @@ def preprocess(data, name):
     if images.shape[1] == 1:
         images = np.stack((images[:, 0],) * 3, axis=1)
     
+    # Reshape Image to channels_last
+    images = np.rollaxis(images, 1, 4)
 
-    images = np.rollaxis(images, 1, 4) # Reshape Image to channels_last
-
-    images = np.asarray([img_to_array(array_to_img(im, scale=False).resize((256,256))) for im in images])
+    # Resize image 
+    images = np.asarray([img_to_array(array_to_img(im, scale=False).resize(img_size)) for im in images])
     
-    dataset = images, labels
+    # Read Numpy array to tensorflow dataset
+    dataset = tf.data.Dataset.from_tensor_slices((images, labels)).batch({{batch_size}})
     {% endif %}
     return dataset
 
-train_loader = preprocess(train_data, "train")
-val_loader = preprocess(val_data, "val")
-test_loader = preprocess(test_data, "test")
+train_dataset = preprocess(train_data)
+val_dataset = preprocess(val_data)
+test_dataset  = preprocess(test_data)
+{% endif %}
 
-{{ header("data augmentation") }}
+{% if data_format != "Public dataset" %}
+# data augmentation
 data_augmentation = tf.keras.Sequential([
   tf.keras.layers.experimental.preprocessing.RandomFlip('horizontal'),
   tf.keras.layers.experimental.preprocessing.RandomRotation(0.2),
 ])
+{% endif %}
 
 {{ header("Model") }}
 # Create the base model
-base_model = tf.keras.applications.{{model_func}}(input_shape=img_shape,
-                                               {% if num_classes != 1000 %}
-                                               include_top = False,
-                                               {% else %}
-                                               include_top = True,
-                                               {% endif %}
-                                               {% if pretrained %}
-                                               weights="{{ pretrained }},"
-                                               {% else %}
-                                               weights = None,
-                                               {% endif %}
-                                               )
+base_model = tf.keras.applications.{{model_func}}({% if num_classes != 1000 %}include_top = False,{% else %}include_top = True,{% endif %}{% if pretrained %}weights="{{ pretrained }}",{% else %}weights = None,{% endif %})
 
 
-
-# using the Keras Functional API
+# Using the Keras Functional API
 {% if num_classes != 1000 %}
-global_average_layer = tf.keras.layers.GlobalAveragePooling2D()
+global_average_layer = tf.keras.layers.GlobalAveragePooling2D() 
 prediction_layer = tf.keras.layers.Dense({{num_classes}})
 
 inputs = tf.keras.Input(shape=img_shape)
-x = data_augmentation(inputs)
-x = tf.keras.applications.{{model_pre}}.preprocess_input(x)
-x = base_model(x)
-x = global_average_layer(x)
-outputs = prediction_layer(x)
-model = tf.keras.Model(inputs, outputs)
+{% if data_format != "Public dataset" %}
+aug_data = data_augmentation(inputs) #data augmentation
+pre_data = tf.keras.applications.{{model_pre}}.preprocess_input(aug_data) # Model Preprocessing
+{% else %}
+pre_data = tf.keras.applications.{{model_pre}}.preprocess_input(inputs) # Model Preprocessing
+{% endif %}
+pre_model = base_model(pre_data)
+glo = global_average_layer(pre_model) #Layer for flattening
+outputs = prediction_layer(glo) #Final Layer
+model = tf.keras.Model(inputs, outputs) #Final Model
 
 {% else %}
 inputs = tf.keras.Input(shape=img_shape)
-x = data_augmentation(inputs)
-x = tf.keras.applications.{{model_pre}}.preprocess_input(x)
-outputs = base_model(x)
-model = tf.keras.Model(inputs, outputs)
+aug_data = data_augmentation(inputs) #data augmentation
+pre_data = tf.keras.applications.{{model_pre}}.preprocess_input(aug_data) # Model Preprocessing
+outputs = base_model(pre_data)
+model = tf.keras.Model(inputs, outputs) #Final Model
 {% endif %}
 
+# Set up model, loss, optimizer and metrics.
 model.compile(optimizer = tf.keras.optimizers.{{ optimizer }}(lr={{lr}}),
               loss = "{{ loss }}",
               metrics = ["accuracy"])
 
-model.fit(train_loader,
+{{ header("Training") }}
+model.fit(train_dataset,
         batch_size={{batch_size}},
         epochs={{num_epochs}},
-        validation_data=val_loader,
+        validation_data=val_dataset,
         {% if visualization_tool == "Tensorboard" and checkpoint%}
         callbacks = [tensorboard_callback, checkpoint_dir],
         {% elif checkpoint %}
@@ -197,4 +237,5 @@ model.fit(train_loader,
         {% endif %}
         )
 
-model.evaluate(val_loader)
+# Testing
+model.evaluate(test_dataset)
