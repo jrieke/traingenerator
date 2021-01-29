@@ -38,7 +38,11 @@ def show():
         # template later.
         inputs["model"] = st.selectbox("Which model?", list(MODELS.keys()))
         
-        
+        inputs["Device"] = st.selectbox(
+            "Which device would you like to train on?",
+            ("GPU", "CPU"),
+        )
+     
         inputs["pretrained"] = st.checkbox("Use pre-trained model (Suggested Use is with a pretrained model)")
         
         st.write("## Input data")
