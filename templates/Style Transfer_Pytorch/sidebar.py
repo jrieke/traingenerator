@@ -60,7 +60,7 @@ def show():
           
           
         inputs["loss"] = st.selectbox(
-            "Loss function", ("Mean Squared Error Loss")
+            "Loss function", ("Style Gram Loss")
         )
         
         inputs["optimizer"] = st.selectbox("Optimizer", list(OPTIMIZERS.keys()))
@@ -71,6 +71,8 @@ def show():
         )
         
         inputs["num_epochs"] = st.number_input("Epochs", 1, None, 5000)
+          
+        inputs["visualize_per_epoch"] = st.number_input("Epochs", 1, None, 200)
                
         
     return inputs
