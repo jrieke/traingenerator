@@ -39,7 +39,7 @@ def load_image(image_name):
   return img.to(device)
 
 image_size = 540
-original_img = load_image('./style.jpg')
+original_img = load_image('./content.jpg')
 style_img = load_image('./style.jpg')
 
 generated = original_img.clone().requires_grad_(True)
@@ -76,6 +76,6 @@ for step in range(total_steps):
   total_loss.backward()
   optimizer.step()
 
-  if step % {{save}} == 0:
+  if step % {{ visualize_per_epoch }} == 0:
     print(f'Total_Loss: {total_loss}')
     save_image(generated,'Generated.png')
