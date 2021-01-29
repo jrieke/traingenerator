@@ -1,16 +1,7 @@
 import streamlit as st
 
 MODELS = {
-     "VGG": {
-        "VGG11": "vgg11",
-        "VGG11 with batch normalization": "vgg11_bn",
-        "VGG13": "vgg13",
-        "VGG13 with batch normalization": "vgg13_bn",
-        "VGG16": "vgg16",
-        "VGG16 with batch normalization": "vgg16_bn",
-        "VGG19": "vgg19",
-        "VGG19 with batch normalization": "vgg19_bn",
-    },
+     "VGG": "VGG19": "vgg19",
 }
 
 
