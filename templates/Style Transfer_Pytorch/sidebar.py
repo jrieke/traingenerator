@@ -1,7 +1,7 @@
 import streamlit as st
 
 MODELS = {
-     "VGG": "VGG19": "vgg19",
+     "VGG": "vgg19",
 }
 
 
@@ -48,23 +48,17 @@ def show():
         st.write("## Input data")
         inputs["data_format"] = st.selectbox(
             "Which data do you want to use?",
-            ("Public Image File", "Custom Image files"),
+            ("Custom Image files"),
         )
         
-        if input["data_format"]== "Public Image File":
+        if input["data_format"]== "Custom Image files":
           st.write("""
           ```
-          It's a public image so you won't have to do anything.
+          Make sure you have style.jpg and content.jpg .
           ```
           """)
-        
-        elif input["data_format"]== "Custom Image File":
-          st.write("""
-          ```
-          Make sure you have two files the content image and the sytle image.
-          ```
-          """) 
-        
+          
+          
         inputs["loss"] = st.selectbox(
             "Loss function", ("Mean Squared Error Loss")
         )
@@ -76,7 +70,7 @@ def show():
             "Learning rate", 0.000, None, default_lr, format="%f"
         )
         
-        inputs["num_epochs"] = st.number_input("Epochs", 1, None, 5)
+        inputs["num_epochs"] = st.number_input("Epochs", 1, None, 5000)
                
         
     return inputs
