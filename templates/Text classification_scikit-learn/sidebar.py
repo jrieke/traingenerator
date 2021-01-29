@@ -9,12 +9,12 @@ MODELS = {
     "K-nearest neighbors": "sklearn.neighbors.KNeighborsClassifier",
     "Decision tree": "sklearn.tree.DecisionTreeClassifier",
     "Multinomial Naive Bayes": "sklearn.naive_bayes.MultinomialNB",
-    "Bernoulli Naive Bayes": "sklearn.naive_bayes.BernoulliNB"
+    "Bernoulli Naive Bayes": "sklearn.naive_bayes.BernoulliNB",
 }
 
 VECTORIZERS = {
     "CountVectorizer": "sklearn.feature_extraction.text.CountVectorizer",
-    "TfidfVectorizer": "sklearn.feature_extraction.text.TfidfVectorizer"
+    "TfidfVectorizer": "sklearn.feature_extraction.text.TfidfVectorizer",
 }
 
 
@@ -30,7 +30,8 @@ def show():
 
         st.write("## Text normalization")
         inputs["text_normalization"] = st.selectbox(
-            "What normalization technique do you want to apply?", ("None", "Stemming", "Lemmatization")
+            "What normalization technique do you want to apply?",
+            ("None", "Stemming", "Lemmatization"),
         )
         if inputs["text_normalization"] == "Stemming":
             st.write(
@@ -46,14 +47,18 @@ def show():
             )
 
         st.write("## Vectorizer")
-        vectorizer = st.selectbox("What vectorizer do you want to apply?", list(VECTORIZERS.keys()))
+        vectorizer = st.selectbox(
+            "What vectorizer do you want to apply?", list(VECTORIZERS.keys())
+        )
         inputs["vectorizer"] = VECTORIZERS[vectorizer]
 
         st.write("## Training")
         st.write("No additional parameters")
 
         st.write("## Metrics")
-        inputs["report"] = st.checkbox("Do you want to compute a classification report?", True)
+        inputs["report"] = st.checkbox(
+            "Do you want to compute a classification report?", True
+        )
 
     return inputs
 
