@@ -1,0 +1,14 @@
+model_func:
+  - sklearn.svm.SVC
+  - sklearn.linear_model.Perceptron
+data_format:
+  - Numpy arrays
+  - Image files
+scale_mean_std:
+  - True
+  - False
+visualization_tool:
+  - Not at all
+  - Tensorboard
+resize_pixels: 28
+crop_pixels: 28
