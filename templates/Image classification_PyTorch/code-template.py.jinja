@@ -47,6 +47,10 @@ from tensorboardX import SummaryWriter
 from aim import Session
 {% elif visualization_tool == "Weights & Biases" %}
 import wandb
+{% elif visualization_tool == "MLflow" %}
+import mlflow
+from ignite.contrib.handlers import MLflowLogger
+import ignite
 {% endif %}
 {% if checkpoint %}
 from pathlib import Path
@@ -121,6 +125,10 @@ wandb.init(
 )
 {% elif visualization_tool == "comet.ml" %}
 experiment = Experiment("{{ comet_api_key }}"{% if comet_project %}, project_name="{{ comet_project }}"{% endif %})
+{% elif visualization_tool == "MLflow" %}
+mlflow_logger = MLflowLogger()
+{% elif new_mlflow_exp %}
+mlflow.set_experiment("{{ mlflow_experiment_name }}")
 {% endif %}
 {% if checkpoint %}
 checkpoint_dir = Path(f"checkpoints/{experiment_id}")
@@ -302,6 +310,9 @@ def log_epoch(trainer):
         {% elif visualization_tool == "comet.ml" %}
         experiment.log_metric(f"{name}_loss", metrics["loss"])
         experiment.log_metric(f"{name}_accuracy", metrics["accuracy"])
+        {% elif visualization_tool == "MLflow" %}
+        mlflow.log_metric(f"{name}_loss", metrics["loss"], step=epoch)
+        mlflow.log_metric(f"{name}_accuracy", metrics["accuracy"], step=epoch)
         {% endif %}
 
     # Train data.
@@ -322,6 +333,25 @@ def log_epoch(trainer):
     print("-" * 80)
     print()
 
+{% if visualization_tool == "MLflow" %}
+# Log info on GPU only if available
+if use_cuda:
+    cuda_params = {
+        "cuda version": torch.version.cuda,
+        "device name": torch.cuda.get_device_name
+    }
+else: cuda_params = {}
+
+mlflow_logger.log_params({
+    "batch_size": batch_size,
+    "model": model.__class__.__name__,
+    "learning_rate": lr,
+    "pytorch version": torch.__version__,
+    "ignite version": ignite.__version__,
+    **cuda_params
+})
+{% endif %}
+
 {# TODO: Maybe use this instead: https://pytorch.org/ignite/handlers.html#ignite.handlers.ModelCheckpoint #}
 {% if checkpoint %}
 @trainer.on(Events.EPOCH_COMPLETED)
@@ -333,4 +363,6 @@ def checkpoint_model(trainer):
 trainer.run(train_loader, max_epochs=num_epochs)
 {% if visualization_tool == "Weights & Biases" %}
 wandb.finish()
+{% elif visualization_tool == "MLflow" %}
+mlflow.end_run()
 {% endif %}
