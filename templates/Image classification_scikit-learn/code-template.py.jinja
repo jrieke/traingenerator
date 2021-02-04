@@ -27,6 +27,8 @@ import zipfile
 {% if visualization_tool == "Tensorboard" %}
 from tensorboardX import SummaryWriter
 from datetime import datetime
+{% elif visualization_tool == "MLflow" %}
+import mlflow
 {% endif %}
 
 {% if data_format == "Numpy arrays" %}
@@ -78,6 +80,12 @@ writer = SummaryWriter(logdir=f"logs/{experiment_id}")
 {% elif visualization_tool == "comet.ml" %}
 # Set up logging.
 experiment = Experiment("{{ comet_api_key }}"{% if comet_project %}, project_name="{{ comet_project }}"{% endif %})
+
+{% elif new_mlflow_exp %} mlflow.set_experiment("{{ mlflow_experiment_name }}")
+{% elif visualization_tool == "MLflow" %} 
+mlflow.start_run()
+run = mlflow.active_run()
+run_id = run.info.run_id
 
 {% endif %}
 
@@ -148,6 +156,8 @@ def evaluate(data, name):
     writer.add_scalar(f"{name}_accuracy", acc)
     {% elif visualization_tool == "comet.ml" %}
     experiment.log_metric(f"{name}_accuracy", acc)
+    {% elif visualization_tool == "MLflow" %}
+    mlflow.log_metric(f"{name}_accuracy", acc)
     {% endif %}
 
 # Train on train_data.
@@ -157,3 +167,7 @@ model.fit(*processed_train_data)
 evaluate(processed_train_data, "train")
 evaluate(processed_val_data, "val")
 evaluate(processed_test_data, "test")
+
+{% if visualization_tool == "MLflow" %}
+mlflow.end_run()
+{% endif %}
