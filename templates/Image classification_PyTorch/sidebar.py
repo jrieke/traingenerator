@@ -157,7 +157,14 @@ def show():
         st.write("## Visualizations")
         inputs["visualization_tool"] = st.selectbox(
             "How to log metrics?",
-            ("Not at all", "Tensorboard", "Aim", "Weights & Biases", "comet.ml", "MLflow"),
+            (
+                "Not at all",
+                "Tensorboard",
+                "Aim",
+                "Weights & Biases",
+                "comet.ml",
+                "MLflow",
+            ),
         )
         if inputs["visualization_tool"] == "Aim":
             inputs["aim_experiment"] = st.text_input("Experiment name (optional)")
