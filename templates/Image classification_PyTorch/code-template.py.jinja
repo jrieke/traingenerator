@@ -6,6 +6,7 @@
 #
 {%- endif %}
  pip install numpy torch torchvision pytorch-ignite{% if visualization_tool == "Tensorboard" %} tensorboardX tensorboard{% endif %}{% if visualization_tool == "Weights & Biases" %} wandb{% endif %}{% if visualization_tool == "comet.ml" %} comet_ml{% endif %}{% if visualization_tool == "Aim" %} aim{% endif %}
+{% if visualization_tool == "MLflow "%} apache-airflow {% endif %}
 {% if visualization_tool == "Weights & Biases" %}
 
 

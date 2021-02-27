@@ -5,7 +5,8 @@
 {%- else %}
 #
 {%- endif %}
- pip install numpy sklearn{% if data_format == "Image files" %} torchvision{% endif %}{% if visualization_tool == "Tensorboard" %} tensorboardX{% endif %}{% if visualization_tool == "comet.ml" %} comet_ml{% endif %}
+pip install numpy sklearn{% if data_format == "Image files" %} torchvision{% endif %}{% if visualization_tool == "Tensorboard" %} tensorboardX{% endif %}{% if visualization_tool == "comet.ml" %} comet_ml{% endif %}
+{% if visualization_tool == "MLflow "%} apache-airflow {% endif %}
 {% if notebook %}
 
 
