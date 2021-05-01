@@ -1,0 +1,28 @@
+La tripanosomiasis africana humana (también conocida como enfermedad del sueño africana) es una enfermedad parasitaria transmitida por las moscas tsetsé del género Glossina y causada por un grupo de parásitos conocidos como tripanosomas. Esta enfermedad se encuentra en África ecuatorial y sigue una distribución irregular, dependiendo de la presencia de vectores y rasgos topográficos característicos.  
+
+Lo cierto es que esta patología ha influido negativamente en el progreso económico y cultural del África subsahariana. De hecho, aproximadamente 60 millones de personas en 36 países están en riesgo de infección y la incidencia ha aumentado constantemente desde mediados de la década de 1960 hasta finales del siglo XX. No obstante, el aumento de la concienciación y la vigilancia han provocado una disminución del número de casos en los últimos años.
+
+¿QUIÉN LO CAUSA Y CUÁL ES SU CICLO DE VIDA?
+Dos flagelados de cinetoplastidos distintos pueden causar tripanosomiasis africana humana: Trypanosoma brucei var. gambiense y Trypanosoma brucei var. rhodesiense, ambas especies de Trypanosoma brucei. La tercera subespecie, Trypanosoma brucei var. brucei, infecta a varias especies animales, pero no a los humanos.
+
+Como sus nombres implican, las dos subespecies humanas mencionadas anteriormente se distinguen por su distribución geográfica (Rhodesia es el nombre anterior de Zimbabwe). Por tanto, Trypanosoma brucei var. gambiense se encuentra en África occidental y central, mientras que Trypanosoma brucei var. rhodesiense se puede encontrar en África oriental y meridional.
+
+Los tripanosomas africanos alternan entre un huésped mamífero y un vector de la mosca tsetsé (moscas secas y húmedas). El desarrollo de la mosca se inicia cuando una mosca no infectada pica a un vertebrado infectado, ingiriendo formas tripomastigotas del parásito. En el intestino de las moscas tsetsé se diferencian en tripomastigotes procíclicos y, luego, en epimastigotes al llegar a las glándulas salivales. Antes de infectar al huésped mamífero, deben madurar en tripomastigotes metacíclicos.
+
+La capa superficial de los tripomastigotes en etapa sanguínea se compone de una única proteína conocida como glicoproteína de superficie variante (VSG), y cada una de las especies de tripanosomas africanos contiene más de mil copias de genes VSG y pseudogenes. Esto les permite establecer una infección crónica a largo plazo en el huésped infectado.
+
+EVOLUCIÓN Y SÍNTOMAS DE LA ENFERMEDAD
+La lesión inicial en el sitio de la mordedura está representada por chancro, que se caracteriza por eritema, dolor a la palpación, calor y edema. La infección en sí puede variar de asintomática a una enfermedad fulminante grave. Con Trypanosoma brucei var. gambiense la enfermedad es de progresión lenta mientras que con Trypanosoma brucei var. rhodesiense es mucho más rápida e invade el sistema nervioso central en semanas o meses.
+
+El curso de la enfermedad a menudo se divide en dos etapas. La primera etapa se denomina etapa hemolinfática debido a la diseminación de parásitos a través del torrente sanguíneo y linfático hacia órganos como el hígado, el bazo, las glándulas endocrinas y el corazón. Por otro lado, la segunda etapa surge cuando estos flagelados ingresan al sistema nervioso central, que también se conoce como etapa meningoencefalítica.
+
+Por tanto, la determinación del estadio mediante el examen del líquido cefalorraquídeo siempre debe realizarse una vez que se han detectado parásitos en otros líquidos corporales. Los criterios para diagnosticar el estadio meningoencefalítico son un recuento de leucocitos elevado y una concentración elevada de proteínas en el líquido (la detección de tripanosomas no es esencial para el diagnóstico).
+
+¿QUÉ OPCIONES DE TRATAMIENTO HAY?
+Similar a las diferentes características epidemiológicas y clínicas de Trypanosoma brucei var. gambiense y Trypanosoma brucei var. rhodesiense, los regímenes de tratamiento para estas dos subespecies también difieren. La elección de la terapia adecuada depende, en gran medida, de la subespecie involucrada y del estadio de la enfermedad.
+
+Trypanosoma brucei var. rhodesiense se trata preferiblemente con el compuesto polianiónico suramina en la etapa temprana, o el compuesto de arsénico melarsoprol en la etapa tardía de la enfermedad. Por otro lado, Trypanosoma brucei var. gambiense se trata con pentamidina o suramina antimicrobianos en la etapa inicial y melarsoprol en la etapa tardía.
+
+Uno de los compuestos más nuevos que se puede utilizar en monoterapia para el tratamiento de Trypanosoma brucei var. gambiense es el fármaco α-difluorometilornitina, más comúnmente conocido como eflornitina. El fármaco inhibe de manera irreversible la función de la enzima ornitina descarboxilasa, que a su vez reduce la proliferación tripanosomal.
+
+También se pueden usar otros medicamentos en el tratamiento de la enfermedad del sueño africana, como nifurtimox y fexinidazol, y también se emplean tratamientos combinados.

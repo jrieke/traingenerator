@@ -1,0 +1,64 @@
+WhatsApp nos ofrece infinidad de funciones, pero carece de algunas opciones interesantes que encontramos en otras apps de mensajería. En este artículo hemos seleccionado algunas de las características de Telegram y Signal que nos gustaría ver en WhatsApp en el futuro.
+
+WhatsApp se encuentra en un proceso de innovación constante, y cada poco tiempo podemos disfrutar de nuevas funciones interesantes que nos hacen la vida más fácil y enriquecen nuestras comunicaciones.
+
+La aplicación de mensajería instantánea, propiedad de Facebook desde el año 2014, es en la actualidad una de las más populares en todo el mundo. A nivel global, Facebook anunció que la plataforma contaba con más de 2.000 millones de usuarios, una cifra que será bastante superior a día de hoy.
+
+Para mantener a los usuarios contentos y atraer a nuevas personas para que empiecen a usar la app, la compañía sabe que una de las claves consiste en la renovación continua. Ofrecer a los consumidores las funciones que demandan ayuda a que sean fieles y que no le cojan el gusto a las aplicaciones de la competencia, motivo por el que vemos nuevas funciones en WhatsApp con muchísima frecuencia.
+
+
+Basta que echemos un vistazo solo al último mes. Entre las nuevas características de WhatsApp más recientes de este período encontramos el carrito de la compra, que permite hacer pedidos y ver el catálogo de cualquier tienda a través de su chat en WhatsApp; la función de avisos para que los usuarios puedan conocer las novedades de cada actualización con mayor facilidad; los mensajes que se autodestruyen que desaparecen a los siete días de mandarlos, o los nuevos fondos personalizados para cada chat con doodles y demás recursos.
+
+Si bien muchas de las funciones son genuinas de WhatsApp, para el desarrollo de otras muchas la plataforma se ha inspirado en las características que presentan otras aplicaciones. No tenemos más que pensar en los estados, que son una copia del formato de publicaciones efímeras de Snapchat, o sin ir más lejos en la reciente función de avisos, tomada de los informes de actualización de Telegram.
+
+Y es que en otras plataformas de mensajería instantánea hay muchas características interesantes de las que carece WhatsApp. En este artículo vamos a repasar algunas de las funciones que debería copiar de Telegram, Signal y otras plataformas. ¡Toma nota! 
+
+Poder utilizar la misma cuenta de WhatsApp con varios números de teléfono es una de las funciones más demandadas por los usuarios. Hay personas que, por circunstancias laborales o personales, tienen que tener dos o más números, y les gustaría poder centralizar todos los mensajes. 
+
+Telegram sí que ofrece soporte para varios números de teléfono, algo que resulta de gran utilidad y es muy cómodo. Puedes añadir hasta tres números diferentes de una forma muy sencilla. Para ello, dirígete al icono Ajustes del menú inferior y luego toca en el botón Editar que encontrarás en la esquina superior derecha.
+
+En esta pantalla, toca el botón Añadir otra cuenta, introduce el teléfono y confírmalo mediante el código que te llegará por SMS.
+
+Notas personales - Signal
+Notas personales Signal
+Una función muy interesante que tiene Signal y que WhatsApp debería copiar es la de Notas personales. A lo largo del día vamos reuniendo enlaces a noticias que nos gustaría consultar más tarde, fotos que queremos ver, cosas que tenemos que recordar y demás contenidos a tener en cuenta. Si bien hay aplicaciones que nos permiten gestionar toda esta información, ¿qué mejor que tu app de mensajería de cabecera para centralizar estos datos?
+
+Signal te permite recopilar todo esto en un chat personal al que solo tú tienes acceso. Para encontrar la función, escribe en el buscador Notas personales, y verás un icono como el que puedes observar más arriba en la imagen. Aquí puedes pegar tus enlaces, añadir comentarios, compartir imágenes y todo lo que quieras consultar más adelante.a
+
+Encuestas - Telegram
+Encuesta en Telegram
+Entre las características de Telegram encontramos otra de las funciones que WhatsApp debería copiar. Hablamos de las encuestas, una herramienta con la que puedes recoger la opinión de los participantes de los grupos y de los canales con total facilidad. 
+
+Crear una encuesta en Telegram es de lo más sencillo. En primer lugar, haz clic en el icono con forma de clip situado junto al campo para introducir texto, y selecciona la opción Encuesta. Después, escribe la pregunta que quieres hacer, y luego añade tantas respuestas posibles como quieras, con un máximo de 8. 
+
+Tienes la posibilidad de hacer que los votos sean anónimos o personales, de permitir respuesta múltiple o de crear un cuestionario en el que solo una respuesta es la correcta. Cuando termines, haz clic en el botón Enviar para publicarla en el grupo o el canal.
+
+Enturbiar caras en las fotos - Signal
+Enturbiar fotos Signal
+Otra de las funciones más interesantes de Signal es la que permite difuminar las caras en las fotos, así como cualquier otro punto de la imagen. De esta forma, puedes mantener el anonimato de las personas que no quieras mostrar, u ocultar cosas que no quieres que aparezcan en las imágenes que compartes, como contraseñas, números de teléfono o correos electrónicos.
+
+Utilizar esta función es muy sencillo. Lo que tienes que hacer es seleccionar la foto que quieres compartir, tocar el icono circular con cuadrados en su interior que aparece en primer lugar en la barra de herramientas superior, y activar la casilla Enturbiar caras. Acto seguido, aparecerá un recuadro difuminado en el rostro de todas las personas que aparezcan en la imagen.
+
+Además, si quieres eliminar cualquier otro detalle de la imagen, solo tienes que tocar con el dedo para que se difumine. Cuando termines, toca el icono de la esquina superior derecha y envía la foto al chat.
+
+Reacciones a los mensajes - Signal
+Reacciones a los mensajes en Signal
+Podríamos ahorrarnos muchos de los mensajes que escribimos en WhatsApp. En innumerables ocasiones contestamos a nuestros contactos con un "Ok", "Vale", "Sí" o con un emoji para que sepan que hemos leído su mensaje, que nos agrada lo que han escrito o cosas similares. 
+
+En Signal, para hacer esto tenemos la posibilidad de añadir reacciones a los mensajes. De esta forma, el emisor sabe que hemos leído lo que ha dicho y que nos hemos enterado, que estamos de acuerdo o que nos encanta.
+
+Para añadir una reacción a un mensaje, simplemente tienes que mantener el dedo presionado sobre él y te aparecerá una selección de emojis. Si el que quieres utilizar no está entre ellos, toca el icono de los tres puntos y búscalo. ¡Así de fácil!
+
+Enviar sin sonido - Telegram
+Enviar mensaje sin sonido en Telegram
+La mayoría de los usuarios pone en silencio su móvil cuando está durmiendo por la noche o cuando está ocupado, pero hay otras personas que no lo hacen. Por este motivo, seguro que en más de una ocasión te los has pensado dos veces antes de mandar un mensaje a una persona que podría estar descansando, en una reunión o haciendo cualquier cosa importante.
+
+Para que puedas sentirte libre de enviar un mensaje sabiendo que no vas a molestar a su destinatario, Telegram cuenta con una función de lo más interesante. Se trata de Enviar sin sonido y, tal como su propio nombre indica, ofrece la posibilidad de remitir el mensaje sin que suene la notificación en el móvil de la persona que lo recibe. 
+
+Para utilizarla, lo único que tienes que hacer es mantener presionado el botón de enviar, y unos segundos después podrás seleccionar la opción Enviar sin sonido.
+
+Programar el envío de mensajes - Telegram
+Programar mensajes en Telegram
+Otra de las funciones de Telegram que debería copiar WhatsApp es la que permite programar el envío de mensajes. Gracias a ella, puedes enviar un mensaje en el momento más oportuno de forma automática, sin necesidad de hacerlo manualmente. Es muy útil, por ejemplo, para no olvidar nunca un cumpleaños y programar la felicitación con tanta antelación como desees.
+
+Para usar esta función, escribe el texto, mantén presionado el botón de envío y selecciona la opción Programar mensaje. A continuación, selecciona el día y la hora a la que quieres remitirlo, y para finalizar pulsa en el botón de la parte inferior.

@@ -1,0 +1,35 @@
+Científicos de Johns Hopkins Medicine, que utilizan escáneres de resonancia magnética y modelos por computadora para sus estudios, identificaron áreas del cerebro humano que regulan los esfuerzos para lidiar con la fatiga.
+
+Estos hallazgos podrían impulsar el desarrollo de estrategias conductuales, y de otro tipo, que aumentan el rendimiento físico en personas sanas, y también iluminar los mecanismos neuronales que contribuyen a la fatiga en personas con depresión, esclerosis múltiple y accidente cerebrovascular.
+
+Según los autores, se conoce mucho sobre los procesos fisiológicos involucrados en la fatiga, como la acumulación de ácido láctico en los músculos, pero poco sobre cómo se procesan los sentimientos de fatiga en el cerebro y cómo este decide cuánto y qué tipo de esfuerzo hacer para superar la fatiga.
+
+Por tanto, conocer las regiones del cerebro que controlan las opciones de los esfuerzos para moderar la fatiga puede ayudar a los científicos a encontrar terapias que alteren, precisamente, esas opciones.
+
+Para el estudio, los investigadores desarrollaron, por primera vez, una forma novedosa de cuantificar objetivamente cómo las personas “sienten” la fatiga, una tarea difícil porque los sistemas de calificación pueden variar de persona a persona. Los médicos, a menudo, piden a sus pacientes que califiquen su fatiga en una escala del 1 al 7, pero, al igual que las escalas de dolor, estas calificaciones son subjetivas y muy variadas.
+
+De esta forma, para estandarizar la métrica de la fatiga, pidieron a 20 participantes del estudio que tomaran decisiones basadas en el riesgo sobre la realización de un esfuerzo físico específico. La edad promedio de los participantes fue de 24 años y osciló entre 18 y 34 años. Nueve de los 20 eran mujeres.
+
+Así, se pidió a los participantes que agarrasen y apretaran un sensor, después de entrenarlos para reconocer una escala de esfuerzo. Por ejemplo, cero era iguala  ningún esfuerzo y 50 unidades de esfuerzo eran iguales a la mitad de la fuerza máxima del participante. Los participantes aprendieron a asociar las unidades de esfuerzo con cuánto exprimir, lo que ayudó a estandarizar el nivel de esfuerzo.
+
+Los participantes repitieron los ejercicios de agarre durante 17 bloques durante 10 intentos cada uno, hasta que se fatigaron, luego se les ofreció una de dos opciones para hacer cada esfuerzo.
+
+Una fue una elección aleatoria («arriesgada») basada en un lanzamiento de moneda, que ofrecía la posibilidad de no realizar ningún esfuerzo o de un nivel de esfuerzo predeterminado. La otra opción fue un nivel de esfuerzo predeterminado. Al introducir incertidumbre, los investigadores estaban viendo cómo cada sujeto valoraba su esfuerzo, una forma, en efecto, de arrojar luz sobre cómo sus cerebros y mentes decidían cuánto esfuerzo hacer.
+
+En función de si el participante eligió la opción arriesgada frente a la predeterminada, los investigadores utilizaron programas computarizados para medir cómo se sentían los participantes acerca de la posibilidad de realizar cantidades particulares de esfuerzo mientras estaban fatigados.
+
+Así, encontraron que las personas tienden a ser más reacias al riesgo, a evitar el esfuerzo. La mayoría de los participantes (19 de 20) optaron por la elección libre de riesgo de un nivel de esfuerzo predeterminado. Esto significa que, cuando están cansados, los participantes estaban menos dispuestos a correr el riesgo de hacer un gran esfuerzo.
+
+El equipo de investigación también evaluó la actividad cerebral de los participantes durante los ejercicios de agarre y, para ello, utilizaron escáneres de resonancia magnética funcional que rastrean el flujo sanguíneo a través del cerebro y muestran qué neuronas se activan con más frecuencia.
+
+Así, confirmó hallazgos previos de la actividad cerebral. Cuando los participantes eligieron entre las dos opciones, parecía aumentar en todos los participantes en un área del cerebro, conocida como ínsula.
+
+También utilizando los escáneres de resonancia magnética funcional para observar más de cerca la corteza motora del cerebro cuando los participantes estaban fatigados. Esta región del cerebro es la encargada de realizar el esfuerzo en sí.
+
+Los investigadores encontraron que la corteza motora se desactivó en el momento en que los participantes «decidieron» entre las dos opciones de esfuerzo. Ese hallazgo es consistente, con estudios previos que muestran que cuando las personas realizan esfuerzos fatigantes repetidos, la actividad de la corteza motora disminuye, asociada con menos señales que se envían a los músculos.
+
+Los participantes cuya actividad de la corteza motora cambió menos, en respuesta al esfuerzo fatigante, fueron los que mostraron mayor aversión al riesgo en sus elecciones de esfuerzo y estaban más fatigados. Esto sugiere que la fatiga puede surgir de una mala calibración entre lo que un individuo cree que puede lograr y la actividad real en la corteza motora.
+
+Esencialmente, el cuerpo se sintoniza con la corteza motora cuando está fatigado, porque si el cerebro continuara enviando más señales a los músculos para que actúen, las limitaciones fisiológicas comenzarían a hacerse cargo.
+
+Estos hallazgos pueden promover la búsqueda de terapias, físicas o químicas, que se dirijan a esta vía en personas sanas para mejorar el rendimiento y en personas con afecciones asociadas con la fatiga.
