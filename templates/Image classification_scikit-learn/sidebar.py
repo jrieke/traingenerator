@@ -72,7 +72,7 @@ def show():
 
         st.write("## Visualizations")
         inputs["visualization_tool"] = st.selectbox(
-            "How to log metrics?", ("Not at all", "Tensorboard", "comet.ml")
+            "How to log metrics?", ("Not at all", "Tensorboard", "comet.ml", "MLflow")
         )
         if inputs["visualization_tool"] == "comet.ml":
             # TODO: Add a tracker how many people click on this link.
@@ -82,6 +82,16 @@ def show():
         elif inputs["visualization_tool"] == "Tensorboard":
             st.markdown(
                 "<sup>Logs are saved to timestamped dir in `./logs`. View by running: `tensorboard --logdir=./logs`</sup>",
+                unsafe_allow_html=True,
+            )
+        elif inputs["visualization_tool"] == "MLflow":
+            inputs["new_mlflow_exp"] = st.checkbox("Create a new experiment")
+            if inputs["new_mlflow_exp"]:
+                inputs["mlflow_experiment_name"] = st.text_input(
+                    "MLflow experiment name"
+                )
+            st.markdown(
+                "<sup>By default, Logs are saved to `mlruns/` folder",
                 unsafe_allow_html=True,
             )
 

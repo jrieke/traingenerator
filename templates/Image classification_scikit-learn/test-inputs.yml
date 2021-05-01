@@ -10,5 +10,6 @@ scale_mean_std:
 visualization_tool:
   - Not at all
   - Tensorboard
+  - MLflow
 resize_pixels: 28
 crop_pixels: 28

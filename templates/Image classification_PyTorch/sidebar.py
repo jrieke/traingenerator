@@ -62,7 +62,10 @@ def show():
             inputs["model_func"] = MODELS[model]
 
         inputs["num_classes"] = st.number_input(
-            "How many classes/output units?", 1, None, 1000,
+            "How many classes/output units?",
+            1,
+            None,
+            1000,
         )
         st.markdown(
             "<sup>Default: 1000 classes for training on ImageNet</sup>",
@@ -154,7 +157,14 @@ def show():
         st.write("## Visualizations")
         inputs["visualization_tool"] = st.selectbox(
             "How to log metrics?",
-            ("Not at all", "Tensorboard", "Aim", "Weights & Biases", "comet.ml"),
+            (
+                "Not at all",
+                "Tensorboard",
+                "Aim",
+                "Weights & Biases",
+                "comet.ml",
+                "MLflow",
+            ),
         )
         if inputs["visualization_tool"] == "Aim":
             inputs["aim_experiment"] = st.text_input("Experiment name (optional)")
@@ -173,6 +183,16 @@ def show():
         elif inputs["visualization_tool"] == "Tensorboard":
             st.markdown(
                 "<sup>Logs are saved to timestamped dir in `./logs`. View by running: `tensorboard --logdir=./logs`</sup>",
+                unsafe_allow_html=True,
+            )
+        elif inputs["visualization_tool"] == "MLflow":
+            inputs["new_mlflow_exp"] = st.checkbox("Create a new experiment")
+            if inputs["new_mlflow_exp"]:
+                inputs["mlflow_experiment_name"] = st.text_input(
+                    "MLflow experiment name"
+                )
+            st.markdown(
+                "<sup>By default, Logs are saved to `mlruns/` folder",
                 unsafe_allow_html=True,
             )
 

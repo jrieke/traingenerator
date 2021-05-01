@@ -18,6 +18,7 @@ visualization_tool:
   - Not at all
   - Tensorboard
   - Aim
+  - MLflow
   # TODO: Find a way to add comet.ml here, without requiring API key.
 num_classes:
   - 10
