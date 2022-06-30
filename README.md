@@ -8,8 +8,7 @@
 
 <p align="center">
     <!-- <a href="https://twitter.com/jrieke"><img src="https://img.shields.io/twitter/follow/jrieke?color=blue&label=Follow%20%40jrieke&logo=twitter&style=plastic"></a> -->
-    <a href="https://gitter.im/jrieke/traingenerator"><img src="https://badges.gitter.im/jrieke/traingenerator.svg" alt="Gitter"></a>
-    <a href="https://traingenerator.jrieke.com/"><img src="https://heroku-shields.herokuapp.com/traingenerator" alt="Heroku"></a>
+    <a href="https://traingenerator.streamlitapp.com/"><img src="https://static.streamlit.io/badges/streamlit_badge_black_white.svg"></a>
     <!-- <a href="https://www.buymeacoffee.com/jrieke"><img src="https://img.shields.io/badge/Buy%20me%20a-coffee-orange.svg?logo=buy-me-a-coffee&logoColor=orange"></a> -->
     <!-- <a href="LICENSE"><img src="https://img.shields.io/github/license/jrieke/traingenerator.svg"></a> -->
     <a href="https://github.com/psf/black"><img src="https://img.shields.io/badge/code%20style-black-000000.svg" alt="Code style: black"></a>
@@ -27,13 +26,13 @@
     🎉 Traingenerator is now live! 🎉
     <br><br>
     Try it out: <br>
-    <a href="https://traingenerator.jrieke.com">https://traingenerator.jrieke.com</a>
+    <a href="https://traingenerator.streamlitapp.com/">https://traingenerator.streamlitapp.com/</a>
 </h3>
 
 <!--
 <p align="center"><strong>
     Try it out: <br>
-    >>> <a href="https://traingenerator.jrieke.com">https://traingenerator.jrieke.com</a> <<<</strong>
+    >>> <a href="https://traingenerator.streamlitapp.com/">https://traingenerator.streamlitapp.com/</a> <<<</strong>
 </p>
 -->
 
@@ -43,7 +42,7 @@ Generate custom template code for PyTorch & sklearn, using a simple web UI built
 
 <br>
 
-*For updates, [follow me on Twitter](https://twitter.com/jrieke), and if you like this project, please [consider sponsoring](https://github.com/sponsors/jrieke) ☺*
+*For updates, [follow me on Twitter](https://twitter.com/jrieke).*
 
 <br>
 
@@ -58,7 +57,7 @@ in the app itself. Your new template will be automatically discovered by Trainge
 and shown in the sidebar. That's it! 🎈
 
 **Want to share your magic?** 🧙 PRs are welcome! Please have a look 
-at [CONTRIBUTING.md](CONTRIBUTING.md) and write on [Gitter](https://gitter.im/jrieke/traingenerator). 
+at [CONTRIBUTING.md](CONTRIBUTING.md). 
 
 **Some ideas for new templates:** Keras/Tensorflow, Pytorch Lightning, object detection, 
 segmentation, text classification, ...
@@ -91,7 +90,7 @@ template to this repo.
 ## Installation
 
 **Note: You only need to install Traingenerator if you want to contribute or run it 
-locally. If you just want to use it, go [here](https://traingenerator.jrieke.com).**
+locally. If you just want to use it, go [here](https://traingenerator.streamlitapp.com/).**
 
 ```bash
 git clone https://github.com/jrieke/traingenerator.git
