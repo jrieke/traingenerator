@@ -1,0 +1,32 @@
+Das-Nano, la empresa Navarra que abre puertas con la cara: la inteligencia artificial tiene sede en Tajonar
+La tecnología creada en Navarra permite el acceso privado y seguro a eventos, hoteles o transportes gracias a la cara de cada persona. 
+Cuando los más de 200 asistentes al evento organizado la pasada semana en el Navarra Arena accedieron al recinto, fue su propia cara la que validó su inscripción en el evento y les permitió su acceso tras mostrar el QR de su entrada. 
+
+Todas las personas que participaron en el OTDChallenge 2020 organizado por el Colegio Oficial de Ingenieros Industriales de Navarra habían certificado su presencia en el acto unos días antes gracias a los datos que aportaron y a un selfie que hicieron con su propio teléfono móvil a través de un par de sencillos pasos.
+
+La tecnología made in Navarra hizo el resto. das-Nano y Veridas, con sede en el polígono Tallutxe de Tajonar, son las artífices que permiten, a través de la biometría y el desarrollo de un potente software, el milagro de conseguir este nuevo avance que permitirá garantizar la seguridad para accesos, por ejemplo, a trenes, aviones, bancos e incluso eventos deportivos. 
+La tecnología de Veridas nace del impulso entre la start up navarra das-Nano y el banco BBVA, que se unieron en una joint venture para fortalecer un proyecto en común.
+"Cuando hablamos de biometría, lo que nos viene a la cabeza es una especie de máscara en la que se detectan puntos característicos de cada persona, pero esta es la biometría de hace unos años, la que ya consideramos de la vieja escuela", explica Eduardo Azanza, máximo responsable de das-Nano sobre los avances en la toma de medidas para el reconocimiento de cada una de las caras de las personas. 
+
+Hasta este momento, con esos puntos característicos se trazaban relaciones geométricas entre ellos para volver a generar la imagen, lo que era un descriptor de cada cara. Ese descriptor contenía información de nuestra cara, era biometría que ya se considera tecnológicamente obsoleta. 
+
+"Es obsoleta por su precisión y porque, además, contiene datos biométricos de las personas, algo que nosotros no hacemos por seguridad. Lo que desarrollamos desde Veridas y das-Nano es un sistema de inteligencia artificial, redes neuronales que hemos entrenado para distinguir caras. Se trata de un motor biométrico que es el tercero mejor del mundo", señala Azanza sobre este importante logro. 
+
+Cuando alguien se hace un selfie, esa imagen pasa por la red neuronal diseñada por la empresa navarra y se convierte en un vector numérico que no representa ninguna facción de la cara, sino que es un vector matemático que sólo sirve a efectos de comparación. "Esto es muy relevante, porque este dato matemático no permite regresar hacia atrás para reconstruir la cara ni ninguna de las facciones. Es un factor clave para nosotros, porque se trata de un proceso irreversible y privado", añade el responsable de das-Nano sobre la seguridad del proceso para cualquier persona.
+
+"Nos dimos cuenta de esta potencialidad y decidimos meter esos datos en un QR y proteger la idea mediante una patente internacional, lo que permite desarrollar la biometría para accesos a través de la cara de los participantes. Ahora mismo, con un billete de avión mío cualquier persona puede acceder al viaje, pero no si personalizamos el acceso con mi cara", reflexiona Eduardo Azanza. 
+
+El proceso consiste en generar un QR que será la entrada al evento donde se incorporan los datos del vector matemático con la cara del propietario de la entrada. Cuando esa persona llega al acceso, el doble factor de seguridad del QR y de su propia cara verificada por el lector le permitirá entrar sin problemas ni colas, ya que le proceso es inmediato.
+"Cuando alguien nos otorgue permiso para guardar su información matemática de su cara, no necesitará ni siquiera el QR para acceder, como por ejemplo ya hemos implantado en algunas oficinas para la entrada al edificio e incluso el pago con la lectura y comprobación de una cara", mantiene Azanza. 
+
+El usuario es el dueño de los datos en cada caso, un asunto de especial relevancia para la empresa navarra, que pone el acento en la privacidad de cada persona.
+
+Con la implantación de esta vanguardista tecnología, sería imposible falsificar las entradas de un concierto o la reventa de un partido de fútbol, ya que cada ticket estaría vinculado a una cara, el legítimo propietario que compró su asiento en el evento. "Se trata de una entrada personalizada gracias al selfie vinculado a la compra". 
+
+"Podemos llevar a cabo medidas y procesos de seguridad todavía más avanzadas, como hemos implantado en banca donde se verifica la identidad del cliente también con su documento de identidad", avanza Azanza. 
+
+Ahora mismo trabajan junto a empresas de transporte aéreo y ferroviario y en el marco de la implantación del 5G, das-Nano y Veridas van a montar para Adif un demostrador de la tecnología en la estación María Zambrano de Málaga.
+
+Son procesos más fuertes, pero también muy ligeros desde el punto de vista de experiencia de usuario, por lo que apenas lleva un momento verificar cada paso. "Es una tecnología implantada ya en accesos corporativos y que va a llegar muy pronto a hospitales, transportes, hoteles y eventos", 
+
+Y todo gracias al trabajo en los últimos años de un equipo de casi 100 personas, muchos de ellos ingenieros navarros que trabajan desde su sede en Tajonar.

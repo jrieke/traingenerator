@@ -1,0 +1,67 @@
+
+INTELIGENCIA ARTIFICIAL EN CIUDADES INTELIGENTES
+El mundo se dirige rápidamente a la era de la inteligencia artificial y la conectividad, donde el e-learning, el teletrabajo y la telemedicina se están convirtiendo en prácticas estándar.
+
+Covid-19 nos ha obligado a aprender rápido y cambiar nuestro enfoque con respecto al futuro de las ciudades inteligentes.
+
+En el congreso de Smart Cities hemos podido escuchar a Huawei, una de las empresas que mejor se adapta y apuesta por este cambio, y Connew, presidente del Departamento de Negocios del Gobierno en China, comentó algunos puntos importantes sobre el tema, como cómo crear «una ciudad constructora, seres inteligentes para una ciudad mejor».
+
+Ciudades Inteligentes en China
+Entre sus frases, destacamos:
+
+– El término ciudad inteligente ya no es un concepto nuevo para nosotros. En 2008, se propuso el concepto, y en 2012, el Ministerio de Información e Industrias de China introdujo políticas y planes. Y hasta ahora hay más de 500 ciudades en China que han hecho los planes, con infraestructura de ciudad inteligente a nivel local.
+
+– Nuestros esfuerzos anteriores fueron centrarnos en tecnologías como big data o inteligencia artificial. Parece que todo se trataba de tecnología. De modo que pudimos optimizar el flujo de semáforos y apoyar un mejor transporte y tráfico en las ciudades, especialmente en las áreas alrededor de los hospitales.
+
+– Ahora estamos acercándonos más a la gente. Así que hemos consultado a algunas personas en el área de transporte que nos han dicho que aunque la tecnología ha optimizado el estado del tráfico en unas áreas, otras partes de la ciudad han encontrado atascos.
+
+– Ahora estamos en la fase de apoyar a las ciudades inteligentes con inteligencia artificial y estudiar los datos masivos que hemos recopilado. Pero, ¿son realmente importantes? ¿Son realmente útiles? Nos hemos dado cuenta de que lo más importante es cómo conectamos y usamos los datos en lugar de la mera recopilación de datos.
+
+– Vemos una economía digital en auge, pero aún tenemos que ver otros beneficios de las ciudades inteligentes para la economía digital.
+
+– Necesitamos saber cómo vamos a combinar el mundo físico y el virtual. Hay que estudiar el mapa lógico de la ciudad, cómo se mueve la gente, dónde están los puntos clave. Necesitamos asegurarnos de que el sistema a nivel de ciudad esté conectado con los sistemas a nivel de distrito. Cuando intentamos construir un mundo digital para nuestro mundo digital, no podemos hacerlo sin el mundo físico en el que vivimos.
+
+– No podemos ser ciegos o aleatorios en lo que respecta a la recopilación de datos. Lo que es más importante es la conectividad y el uso de datos. Sabemos que hemos recopilado datos masivos, los datos antiguos y los nuevos. Entonces, ¿cómo podemos combinar los datos nuevos y antiguos? Necesitamos descubrir a los propietarios de los datos y debemos establecer los estándares adecuados para asegurarnos de que los datos antiguos se conviertan en el nuevo formato. Gracias a eso hemos pasado de tener 100 apps a tener solo dos.
+
+– Al crear un sistema es importante que sea fácil de usar. Tenemos que ayudar a los usuarios del público en general, los ciudadanos, y a utilizar nuestros sistemas y herramientas utilizando nuestros sistemas.
+
+– Los cerebros inteligentes necesitan inteligencia, la conectividad también necesita inteligencia y las acciones necesitan inteligencia. Todos los sensores necesitan inteligencia y también las aplicaciones.
+
+Seguimos en el congreso, viendo todas las charlas que se están realizando, y os comentaremos lo más interesante de lo que allí se divulgue. ¡Atentos!
+
+Ciudades Inteligentes en Europa
+Mientras tanto, en Europa han destacado la urgencia de asegurar una transformación digital centrada en las personas, que es esencial para garantizar resiliencia en las ciudades. Comentan que las estrategias digitales europeas deben apoyar plenamente la integración de la digitalización como parte de la prestación de servicios públicos basada en derechos.
+
+Reconocen el papel crucial de las tecnologías de IA para responder a emergencias de salud pública global, pero al mismo tiempo tienen claro que deben protegerse plenamente los derechos humanos y los valores fundamentales europeos.
+
+El próximo marco regulatorio de la UE sobre IA confiable debe abordar específicamente el uso de IA en público, predicción y gestión de emergencias sanitarias, asegurándose de que la IA se utilice sin socavar ética y derechos fundamentales.
+
+Entre los puntos mencionados comentan:
+
+– El desarrollo de la IA también ayuda a las ciudades a alcanzar los objetivos de sostenibilidad, especialmente en sectores como la calidad del aire y la movilidad.
+
+– Las autoridades locales usan IA para aprovechar las aplicaciones de IoT y predecir el nivel de contaminación en las ciudades. Los gobiernos de las ciudades pueden
+obtener información valiosa mediante el análisis de los datos de las redes sociales sobre el comportamiento de los turistas y adaptar políticas e inversiones culturales a las necesidades.
+
+– Las ciudades utilizan el aprendizaje automático para predecir el espacio de estacionamiento disponibilidad para luego redirigir eficientemente a los conductores a un área libre.
+
+– A través de chatbots de IA, Los gobiernos pueden comunicarse más rápido con los ciudadanos y las partes interesadas aumentando su sentido de participación.
+
+– El rápido y exponencial progreso tecnológico en la IA tendrá un efecto disruptivo en el trabajo. Si bien todavía es difícil predecir hasta qué punto afectarán la IA y la robótica en la tasa de desempleo, polarización de puestos de trabajo, desigualdad de ingresos o discriminación en el trabajo, los riesgos parecen altos. La IA, impulsada por el aprendizaje automático, automatiza las tareas que pueden causar desplazamiento o incluso sustitución de trabajadores, polarización de la demanda laboral entre trabajadores altamente calificados y trabajos poco cualificados, y empeoran la situación de grupos de personas ya frágiles, como las personas digitalmente excluidas, desempleadas de larga duración y personas poco cualificadas.
+
+– Las aplicaciones de IA pueden ocultar el sesgo o amplificar el sesgo existente. El aprendizaje automático, impulsado por datos, sin conciencia, refleja los prejuicios humanos y las opiniones de los desarrolladores, y repite y perpetúa datos que, si son defectuosos o incorrectos, pueden dar lugar a malas interpretaciones y errores.
+
+– Cuando se utiliza la IA, por ejemplo, para la movilidad urbana (por ejemplo, automóviles autónomos) o ambiental (por ejemplo, contaminación del aire o seguridad del agua), el sesgo de los datos puede conducir a mayores riesgos para las personas.
+
+– Los sistemas y algoritmos de IA deben someterse a pruebas rigurosas para comprobar su fiabilidad y seguridad, es decir, tiempo, la experiencia y los costes adecuados.
+
+– Los problemas de responsabilidad también son una preocupación importante para ciudades. Si un autobús sin conductor atropella a un peatón, ¿quién es el responsable?
+
+De esta forma se destacan ciertos principios básicos:
+
+– IA centrada en las personas: las personas están en el centro del despliegue de la IA en las ciudades. La IA debería utilizarse para facilitar el acceso y brindar mejores servicios a los ciudadanos, no para rastrear, controlar o dirigir los comportamiento. Los sistemas de inteligencia artificial deben servir a las personas, y las soluciones deben basarse en los valores éticos.
+– Inteligencia colaborativa para una implementación exitosa de la IA en las ciudades: la IA debe complementar y aumentar las capacidades humanas, no reemplazarlas.
+– Los datos son el motor de la IA: la cantidad, calidad y transparencia de los datos utilizados es un éxito clave factor para la adopción de la IA. Los datos abiertos anotados de alta calidad deberían estar más disponibles para su uso por todos los actores. Quienes utilizan los datos tienen la responsabilidad de garantizar su integridad, autenticidad, consistencia y precisión.
+– Seguridad y protección: la IA debe servir y proteger a las personas; Los sistemas deben ser precisos y funcionar seguramente. La seguridad y la privacidad deben integrarse en los sistemas desde la fase de diseño.
+– Responsabilidad y transparencia: dado que el impacto de la IA en la seguridad de las personas puede ser alto, fuerte, deben garantizarse medidas y mecanismos de rendición de cuentas y transparencia.
+

@@ -1,0 +1,15 @@
+Como una escena de La invasión de los ultracuerpos (Philip Kaufman, 1978), un virus afecta a un huésped y lo convierte en una fábrica para hacer copias de sí mismo. Así lo han demostrado unos investigadores, que explicaron que un gran grupo de virus, incluidos los virus de la influenza y otros patógenos graves, roban señales genéticas de sus anfitriones para expandir sus propios genomas.
+
+El equipo interdisciplinario de virólogos examinó un grupo de virus, conocidos como virus de ARN de cadena negativa segmentada (sNSV), que incluyen patógenos graves y generalizados de humanos, animales y plantas domesticados, incluidos los virus de influenza y el virus de Lassa.
+
+De esta forma, demostraron que, al robar señales genéticas de sus anfitriones, los virus pueden producir una gran cantidad de proteínas previamente no detectadas. Los investigadores los etiquetaron como proteínas OVNI, ya que se codifican uniendo las secuencias del huésped y las virales. Lo cierto es que este tipo de proteínas no se conocían hasta este estudio.
+
+Así, estas proteínas OVNI pueden alterar el curso de la infección viral y podrían explotarse con fines de vacuna. De hecho, Ivan Marazzi, profesor asociado de Microbiología y autor del estudio, explica: “Para comprender cómo un patógeno antagoniza al huésped y establece la infección, necesitamos tener una compresión clara de qué proteínas codifica un patógeno, cómo funcionan y la forma en que contribuyen a la virulencia”.
+
+Los virus no pueden construir sus propias proteínas, por lo que necesitan proporcionar instrucciones adecuadas a la maquinaria que construye las proteínas en las células de su huésped. Se sabe que los virus hacen esto a través de un proceso llamado “cap-snatching”, en el que cortan el extremo de uno de los propios mensajes de codificación de proteínas de la célula y luego extienden esa secuencia con una copia de uno de sus propios genes.
+
+De esta forma, los investigadores muestran que, debido a que producen híbridos de ARNm del huésped con sus propios genes, los virus (sNSV) pueden producir mensajes con codones de inicio adicionales derivados del huésped, un proceso que llamaron “comenzar a arrebatar”. Esto hace posible traducir proteínas previamente insospechadas de las secuencias híbridas del virus huésped.
+
+Además, muestran que estos genes novedosos son expresados por los virus de la influenza y, potencialmente, por una gran cantidad de otros virus. El producto de estos genes híbridos puede ser visible para el sistema inmune, y pueden modular la virulencia.
+
+No obstante, se necesitan más estudios para comprender esta nueva clase de proteínas y cuáles son las implicaciones de su expresión generalizada por muchos de los virus de ARN que causan epidemias y pandemias. De hecho, los investigadores dicen que la siguiente parte de su trabajo es comprender los distintos roles que juegan los genes insospechados.

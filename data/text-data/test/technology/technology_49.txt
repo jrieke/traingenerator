@@ -1,0 +1,17 @@
+FORD TRABAJA EN UNA TECNOLOGÍA CAPAZ DE PREVENIR LOS ACCIDENTES ANTES DE QUE SE PRODUZCAN
+
+La tecnología eléctrica está contando con un aliado sorpresa que no estaba ahí cuando la industria de los coches despegó de manera definitiva hace algo más de 70 años, y no es otro que las herramientas de inteligencia artificial e informáticas que permiten a nuestros vehículos ver, procesar y decidir qué hacer en función del tráfico que les rodea.
+
+
+Es por eso que los nuevos modelos que empezarán a llegar al mercado, no se contentarán con ser menos nocivos para el medio ambiente gracias a sus cero emisiones, sino que también buscarán aumentar la seguridad del conductor y de todos los pasajeros a través de nuevas tecnologías capaces de adivinar cuándo estamos en peligro y evitar que lleguen a producirse accidentes.
+
+En colaboración con instituciones
+El caso es que la compañía norteamericana se ha puesto al frente de un proyecto de investigación en Reino Unido que intenta "prever accidentes de tráfico" antes de que se produzcan, una herramienta que denominan como "predictiva", y que sería capaz de analizar la situación del tráfico que nos rodea para evaluar potenciales amenazas y evitarlas, bien controlando el propio coche a través de funciones de autopilot, bien previniendo al conductor con tiempo suficiente para reaccionar o alertando a las autoridades de potenciales lugares conflictivos.
+
+Este proyecto no corre a cargo solo del fabricante de coches sino que también se han unido equipos de investigación de instituciones universitarias y organismos públicos de transporte que, a lo largo de 18 meses, se encargarán de recopilar datos de 700 vehículos, así como de los pasajeros que vayan en ellos, y de otros sensores que se situarán en determinados puntos de la red de carreteras de Oxfordshire y Londres.
+
+Entre los datos que van a recabar estarán los de uso de los pedales de acelerador y freno, los ángulos de los volantes en cada porción de la red de carreteras, los patrones de movimiento de ciclistas y peatones y, por supuesto, aquellos que tengan que ver con incidentes cercanos que puedan producirse durante las horas de tráfico analizadas.
+
+Como podéis imaginar, toda esa información servirá para que la nueva herramienta de Ford sea capaz de ubicar zonas de especial riesgo, para que las autoridades tomen nota y pongan remedio con obras o señalizaciones más precisas. Es el caso de cruces sin semáforos, separaciones de carriles más claras y menos invasivas, que reduzcan los ángulos de visibilidad, etc.
+
+Además de Reino Unido, Ford también está trabajando en el desarrollo de tecnologías parecidas en proyectos específicos con las autoridades de otros países, como es el caso de Valencia o Colonia, en Alemania, donde la compañía cuenta con plantas de fabricación de algunos de sus principales modelos.

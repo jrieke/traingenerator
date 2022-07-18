@@ -1,0 +1,31 @@
+El cerebro de los mamíferos está compuesto por dos lados, o hemisferios, que conecta los tractos nerviosos, también conocidos como axones. Estos dos hemisferios comparten información a lo largo de estos axones. En este sentido, la rapidez con que la información se propaga en el cerebro depende de la cantidad de sinapsis (las uniones entre las células nerviosas) que tiene que pasar.
+
+De esta forma, un sistema ideal tendría una multitud de conexiones largas para permitir la transferencia rápida de información entre todas las partes del cerebro. Sin embargo, producir tantas conexiones neuronales tiene un costo para el animal.
+
+Comúnmente, la gente cree que los seres humanos, debido a nuestra evolución avanzada, tienen niveles más altos de conectividad cerebral que otros animales, lo que permita una transferencia de información más eficiente y rápida en todo el cerebro.
+
+Ahora, un nuevo estudio realizado por investigadores de la Universidad de Tel Aviv, en Israel, desafía esta suposición tras escanear los cerebros de más de 120 mamíferos diferentes y descubrir que la conectividad cerebral no es más alta en humanos ni depende del tamaño del cerebro.
+
+Estos hallazgos, que sugieren que todos los mamíferos tienen niveles iguales de conectividad cerebral, aparecen en la revista Nature Neuroscience.
+
+EL SUPUESTO DE CONECTIVIDAD CEREBRAL
+La idea de que la conectividad cerebral y, por tanto, la eficiencia, es mayor en el cerebro humano ha existido durante mucho tiempo. Para probar esta suposición, el profesor Yaniv Assaf y su equipo utilizaron un tipo de escáner cerebral llamado IRM de difusión para escanear los cerebros de 123 especies diferentes de mamíferos, incluidos los humanos.
+
+Era la primera vez que los investigadores colocaban la mayoría de los cerebros de estos animales dentro de un escáner de resonancia magnética.
+
+Así, los animales del estudio incluyeron roedores, monos e, incluso, delfines. Los volúmenes cerebrales de la especie oscilaron entre 0,1 milímetros (ml) y más de 1.000 ml.
+
+Los investigadores también escanearon los cerebros de 32 personas y utilizaron un programa de exploración para reconstruir la red neuronal de cada especie, incluidas las neuronas que transfieren información y las sinapsis donde se encuentran.
+
+UNA LEY UNIVERSAL
+Para estimar la conectividad cerebral de cada especie, los investigadores aplicaron un enfoque matemático basado en el número de sinapsis que la información debe cruzar para llegar desde dos puntos dentro del cerebro.
+
+En este sentido, el profesor Assaf explicó que, para cada cerebro que escanearon, midieron cuatro medidores de conectividad: la conectividad en cada hemisferio (conexiones intrahemisféricas) la conectividad entre los dos hemisferios (interhemisférico) y la conectividad general.
+
+Así, el equipo obtuvo un valor llamado ruta media corta, o MSP, que indica la cantidad mínima de conexiones que la información debe pasar para obtener entre dos partes de la red. Un MSP alto indica baja conectividad cerebral.
+
+Al comparar estos valores entre especies, los investigadores descubrieron que la conectividad cerebral es independiente del tamaño y la estructura del cerebro de un mamífero. “En otras palabras, los cerebros de todos los mamíferos exhiben la misma conectividad y la información viaja con la misma eficiencia dentro de ellos”, explica Assaf.
+
+El equipo también identificó un mecanismo por el cual el cerebro equilibra la cantidad de conexiones que utiliza para transferir información. Cuando había muchas conexiones entre los dos hemisferios, las conexiones dentro de los hemisferios individuales eran bajas, y viceversa.
+
+Este mecanismo asegura que la alta conectividad en una parte del cerebro siempre va a estar contrarrestada por la baja conectividad en la otra parte.

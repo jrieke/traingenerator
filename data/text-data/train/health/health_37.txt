@@ -1,0 +1,19 @@
+Una prueba de tumor podría ayudar a identificar a las pacientes con cáncer de ovario con una supervivencia precaria y, en el futuro, incluso informar sobre nuevos enfoques terapéuticos, según demostraron los resultados de una importante colaboración internacional. El artículo de investigación fue dirigido por UNSW Medicine e involucró a 125 autores de 86 organizaciones.
+
+El cáncer de ovario es el octavo cáncer que se presenta con mayor frecuencia en mujeres, con casi 300.000 nuevos casos en todo el mundo en 2018. Además, tiene una supervivencia baja y el tipo estudiado en este artículo (el cáncer de ovario seroso de alto grado) es el tipo de supervivencia más común, y el peor.
+
+“Realizamos un análisis de 3.769 muestras de tumores de mujeres con cáncer de ovario y descubrimos que podíamos usar de manera confiable un trozo de tumor para determinar qué tan buenas serían las posibilidades de supervivencia de una mujer cinco años después del diagnóstico«, explica la autora principal, Susan Ramus de UNSW Medicine.
+
+De esta forma, los investigadores encontraron que su prueba de expresión genética era sustancialmente mejor para predecir la supervivencia que usar la edad y el estadio del cáncer de un paciente.
+
+«Cuando se dividió a las mujeres en cinco grupos, encontramos que las mujeres cuya expresión génica tumoral se asoció con el mejor pronóstico tenían una supervivencia de nueve años, mientras que las mujeres del grupo de supervivencia más pobre tienen una supervivencia de dos años, lo cual es una diferencia muy grande«, continúa Ramus.
+
+Para el estudio, el equipo utilizó un conjunto de muestras de entrenamiento y un conjunto de pruebas, casi 4.000 muestras en total. Así, utilizando enfoques estadísticos novedosos, analizaron datos de seis estudios previos de expresión génica, que les ayudaron a identificar genes que podrían estar involucrados en la supervivencia del cáncer de ovario seroso de alto grado.
+
+Después de reunir un panel de aproximadamente 500 genes candidatos, el equipo midió la expresión génica en las 4.000 muestras utilizando la plataforma NanoString. Así, eligieron uno de los cuatro métodos de aprendizaje automático, un enfoque llamado “red elástica”, que se desempeñó mejor en los datos de entrenamiento.
+
+«Usamos el conjunto de entrenamiento para determinar qué genes podrían usarse en la predicción, y luego los probamos para ver si obtuvimos los mismos resultados en el otro conjunto«, indica Ramus, que también es cofundadora del consorcio Ovarian Tumor Tissue Analysis (OTTA), un grupo internacional de investigadores que están trabajando en varios proyectos diferentes a gran escala, utilizando las muestras compiladas por el consorcio para abordar importantes cuestiones clínicas.
+
+De hecho, Ramus confiesa que el consorcio es único porque tienen acceso a miles de muestras y eso, precisamente, es lo que les permitió desarrollar esta herramienta de pronóstico. “Otros grupos han intentado antes analizar el pronóstico, pero nada se ha utilizado clínicamente. Por el momento, solo la edad y el estadio del paciente se utilizan para determinar la supervivencia, por lo que algo como nuestra herramienta es necesario«, añade.
+
+Además, para validar aún más los hallazgos, el equipo de investigación desea incluir la prueba en un estudio prospectivo y ensayos clínicos y esperan que su prueba esté lista para uso clínico en un futuro próximo.
