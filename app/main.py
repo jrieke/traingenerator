@@ -16,12 +16,11 @@ import collections
 import utils
 
 
-MAGE_EMOJI_URL = "https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/240/twitter/259/mage_1f9d9.png"
 
 
 # Set page title and favicon.
 st.set_page_config(
-    page_title="Traingenerator", page_icon=MAGE_EMOJI_URL,
+    page_title="Traingenerator", page_icon='🤖',
 )
 
 
@@ -49,18 +48,37 @@ else:
     colab_enabled = False
 
 
-# Display header.
-st.markdown("<br>", unsafe_allow_html=True)
-st.image(MAGE_EMOJI_URL, width=80)
 
-"""
-# Code Generator for Machine Learning
 
-[![Star](https://img.shields.io/github/stars/jrieke/traingenerator.svg?logo=github&style=social)](https://gitHub.com/jrieke/traingenerator/stargazers)
-&nbsp[![Follow](https://img.shields.io/twitter/follow/jrieke?style=social)](https://www.twitter.com/jrieke)
-&nbsp[![Buy me a coffee](https://img.shields.io/badge/Buy%20me%20a%20coffee--yellow.svg?logo=buy-me-a-coffee&logoColor=orange&style=social)](https://www.buymeacoffee.com/jrieke)
-"""
-st.markdown("<br>", unsafe_allow_html=True)
+glowing_text_style = '''
+    <style>
+        .glowing-text {
+            font-family: 'Arial Black', sans-serif;
+            font-size: 33px;
+            text-align: center;
+            animation: glowing 2s infinite;
+        }
+        
+        @keyframes glowing {
+            0% { color: #FF9933; } /* Saffron color */
+            10% { color: #FFD700; } /* Gold color */
+            20% { color: #FF1493; } /* Deep Pink */
+            30% { color: #00FF00; } /* Lime Green */
+            40% { color: #FF4500; } /* Orange Red */
+            50% { color: #9400D3; } /* Dark Violet */
+            60% { color: #00BFFF; } /* Deep Sky Blue */
+            70% { color: #FF69B4; } /* Hot Pink */
+            80% { color: #ADFF2F; } /* Green Yellow */
+            90% { color: #1E90FF; } /* Dodger Blue */
+            100% { color: #FF9933; } /* Saffron color */
+        }
+    </style>
+'''
+
+# Display the glowing text using st.markdown
+st.markdown(glowing_text_style, unsafe_allow_html=True)
+st.markdown(f'<p class="glowing-text">Code Generator for Machine Learning</p>', unsafe_allow_html=True)
+st.image("https://github.com/software-babooi/ideal-potato-oibsip/assets/110555361/990476f8-9c47-4938-9889-87811658df1e",use_column_width=True)
 """Jumpstart your machine learning code:
 
 1. Specify model in the sidebar *(click on **>** if closed)*
@@ -141,7 +159,7 @@ notebook = utils.to_notebook(notebook_code)
 # Display donwload/open buttons.
 # TODO: Maybe refactor this (with some of the stuff in utils.py) to buttons.py.
 st.write("")  # add vertical space
-col1, col2, col3 = st.beta_columns(3)
+col1, col2, col3 = st.columns(3)
 open_colab = col1.button("🚀 Open in Colab")  # logic handled further down
 with col2:
     utils.download_button(code, "generated-code.py", "🐍 Download (.py)")
